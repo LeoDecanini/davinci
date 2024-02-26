@@ -15,8 +15,8 @@ const Home = () => {
             Diseño
           </h1>
           <p className="py-5 font-bold text-black/70">
-            Títulos Oficiales • Modalidad de Estudio "A Distancia" o
-            "Presencial"
+            Títulos Oficiales • Modalidad de Estudio &#34;A Distancia&#34; o
+            &#34;Presencial&#34;
           </p>
           <button className="px-8 py-3 font-bold text-white bg-secondary hover:bg-[#b30c67]">
             Contactanos
