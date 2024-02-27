@@ -32,10 +32,9 @@ const Stats = () => {
               Conoce Da Vinci
             </button>
           </div>
-          <div>
+          <div className="h-full">
             <iframe
-              width="560"
-              height="315"
+            className="w-full h-full"
               src="https://www.youtube.com/embed/2ql5H_dz-G4"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
