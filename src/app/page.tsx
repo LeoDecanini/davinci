@@ -6,6 +6,7 @@ import Stats from "@/components/Home/Stats";
 import InfoStats from "@/components/Home/InfoStats";
 import ExplorePage from "@/components/Home/ExplorePage";
 import Inscriptions from "@/components/Home/Inscriptions";
+import About1 from "@/components/Home/About1";
 
 const Home = () => {
   return (
@@ -35,6 +36,7 @@ const Home = () => {
       <InfoStats />
       <ExplorePage />
       <Inscriptions />
+      <About1 />
     </>
   );
 };

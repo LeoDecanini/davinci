@@ -44,12 +44,12 @@ const Inscriptions = () => {
           </h3>
           <div className="h-1 max-w-20 md:max-w-40 bg-primary"></div>
         </div>
-        <div className="grid md:grid-cols-3 gap-20 pt-20 text-white">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-20 pt-20 text-white">
           {carreras.map((carrera, index) => (
-            <Link href={"/"} key={index} className={"flex items-center gap-5"}>
+            <Link href={"/"} key={index} className={"flex flex-col text-center sm:text-left sm:flex-row items-center gap-5"}>
               <div className={"text-6xl font-extrabold"}>{carrera.numero}</div>
               <div>
-                <h4 className={"text-2xl"}>{carrera.nombre}</h4>
+                <h4 className={"text-xl lg:text-2xl"}>{carrera.nombre}</h4>
               </div>
             </Link>
           ))}
