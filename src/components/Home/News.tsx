@@ -23,15 +23,15 @@ const News = () => {
   ];
 
   return (
-    <section className="flex h-full relative bg-[url('/fondo-noticias-1.webp')] bg-no-repeat bg-cover bg-center pb-10 justify-center">
+    <section className="flex h-full relative bg-[url('/fondo-noticias-1.webp')] bg-no-repeat bg-cover bg-center px-2 sm:px-5 md:px-10 py-10 justify-center">
       <div className="absolute inset-0 bg-black opacity-10"></div>
       <div className="max-w-7xl w-full relative">
         <div>
-          <h3 className="font-bold text-5xl pt-10">Noticias</h3>
-          <div className="h-1 max-w-40 bg-primary"></div>
+          <h3 className="font-bold text-3xl md:text-5xl">Noticias</h3>
+          <div className="h-1 max-w-20 md:max-w-40 bg-primary"></div>
         </div>
-        <div className="grid grid-cols-2 gap-5 pt-10">
-          {noticias.map((noticia) => (
+        <div className="grid md:grid-cols-2 gap-5 pt-10">
+        {noticias.map((noticia) => (
             <div
               className="bg-white shadow-lg transition-shadow hover:cursor-pointer hover:shadow-2xl"
               key={noticia.id}

@@ -23,13 +23,14 @@ const Events = () => {
   ];
 
   return (
-    <section className="flex h-full py-10 justify-center">
+    <section className="flex h-full p-2 sm:p-5 md:p-10 justify-center">
       <div className="max-w-7xl w-full">
         <div>
           <span className="font-bold text-xl">Eventos</span>
-          <h3 className="font-bold text-5xl pt-5">
-            Charlas Informativas y Eventos Gratuitos
-          </h3>
+          <div>
+            <h3 className="font-bold text-3xl md:text-5xl">Charlas Informativas y Eventos Gratuitos</h3>
+            <div className="h-1 max-w-40 md:max-w-[500px] bg-primary"></div>
+          </div>
           <p className="py-5 max-w-5xl">
             Conocé los eventos que organizamos durante todo el año, abiertos al
             público y con entrada gratuita: Charlas Informativas de Carreras,
@@ -40,10 +41,10 @@ const Events = () => {
             Ver eventos
           </button>
         </div>
-        <div className="grid grid-cols-3 gap-5 pt-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 pt-10">
           {eventos.map((evento, index) => (
-            <div
-              className="shadow-lg h-full transition-shadow hover:cursor-pointer hover:shadow-2xl"
+              <div
+                  className="shadow-lg h-full transition-shadow hover:cursor-pointer hover:shadow-2xl"
               key={index}
             >
               <img src={evento.imagen} alt="" />

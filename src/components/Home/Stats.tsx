@@ -2,14 +2,14 @@ import React from "react";
 
 const Stats = () => {
   return (
-    <section className="flex h-full relative py-10 justify-center">
+    <section className="flex h-full relative px-2 sm:px-5 md:px-10 py-10 justify-center">
       <div className="absolute inset-0 bg-black opacity-10"></div>
       <div className="max-w-7xl w-full relative gap-10">
         <div>
-          <h3 className="font-bold text-5xl pt-5">Instalaciones y Recursos</h3>
-          <div className="h-1 max-w-64 bg-primary"></div>
+          <h3 className="font-bold text-3xl md:text-5xl pt-5">Instalaciones y Recursos</h3>
+          <div className="h-1 max-w-40 md:max-w-[500px] bg-primary"></div>
         </div>
-        <div className="grid grid-cols-2 pt-10 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 pt-10 items-center">
           <div>
             <p className="">
               La Escuela Da Vinci es reconocida por su infraestructura
@@ -32,7 +32,7 @@ const Stats = () => {
               Conoce Da Vinci
             </button>
           </div>
-          <div className="h-full">
+          <div className="h-full min-h-96">
             <iframe
             className="w-full h-full"
               src="https://www.youtube.com/embed/2ql5H_dz-G4"
