@@ -3,7 +3,6 @@ import React from "react";
 const Stats = () => {
   return (
     <section className="flex h-full relative px-2 sm:px-5 md:px-10 py-10 justify-center">
-      <div className="absolute inset-0 bg-black opacity-10"></div>
       <div className="max-w-7xl w-full relative gap-10">
         <div>
           <h3 className="font-bold text-3xl md:text-5xl pt-5">Instalaciones y Recursos</h3>

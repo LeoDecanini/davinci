@@ -101,23 +101,23 @@ const Nav = () => {
                             </div>
                         )}
                     </div>
-                    <div className="h-full py-8 font-extrabold">
+                    <div className="h-full py-8 font-extrabold group">
                         <Link
                             className="text-base xl:text-lg text-white font-bold"
                             href={"/"}
                         >
                             EVENTOS
                         </Link>
-                        <div className="h-0.5 bg-primary"></div>
+                        <div className="h-0.5 bg-primary group-hover:block hidden"></div>
                     </div>
-                    <div className="h-full py-8 font-extrabold">
+                    <div className="h-full py-8 font-extrabold group">
                         <Link
                             className="text-base xl:text-lg text-white font-bold"
                             href={"/"}
                         >
                             NOTICIAS
                         </Link>
-                        <div className="h-0.5 bg-primary"></div>
+                        <div className="h-0.5 bg-primary group-hover:block hidden"></div>
                     </div>
                     <div
                         className="text-white font-extrabold flex h-full py-8"
