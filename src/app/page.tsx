@@ -1,6 +1,9 @@
 import React from "react";
 import Info from "@/components/Home/Info";
 import Events from "@/components/Home/Events";
+import News from "@/components/Home/News";
+import Stats from "@/components/Home/Stats";
+import InfoStats from "@/components/Home/InfoStats";
 
 const Home = () => {
   return (
@@ -25,6 +28,9 @@ const Home = () => {
       </section>
       <Info />
       <Events />
+      <News />
+      <Stats />
+      <InfoStats />
     </>
   );
 };
