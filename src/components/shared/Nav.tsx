@@ -28,9 +28,9 @@ const Nav = () => {
                     <IoIosMenu className="text-white text-5xl lg:text-4xl"/>
                 </div>
 
-                <div className="w-full lg:w-[165px]">
+                <Link href={"/"} className="w-full lg:w-[165px]">
                     <img className="w-[165px] mx-auto" src="/logo.svg" alt=""/>
-                </div>
+                </Link>
 
                 <div className="block sm:hidden p-4 rounded-full bg-secondary">
                     <FaRegMessage className="text-white text-2xl lg:text-4xl"/>

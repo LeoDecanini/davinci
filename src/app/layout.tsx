@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/shared/Nav";
+import Footer from "@/components/shared/Footer";
 
 const inter = Montserrat({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body suppressHydrationWarning className={inter.className}>
         <Nav />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

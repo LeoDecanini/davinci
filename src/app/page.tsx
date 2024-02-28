@@ -7,6 +7,8 @@ import InfoStats from "@/components/Home/InfoStats";
 import ExplorePage from "@/components/Home/ExplorePage";
 import Inscriptions from "@/components/Home/Inscriptions";
 import About1 from "@/components/Home/About1";
+import Sponsors from "@/components/Home/Sponsors";
+import SponsorsList from "@/components/Home/SponsorsList";
 
 const Home = () => {
   return (
@@ -37,6 +39,8 @@ const Home = () => {
       <ExplorePage />
       <Inscriptions />
       <About1 />
+      <Sponsors />
+      <SponsorsList />
     </>
   );
 };
