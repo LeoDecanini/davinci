@@ -9,7 +9,7 @@ const Nav = () => {
       <div className={"w-full bg-[#222427] text-white"}>
         <div
           className={
-            "md:grid md:grid-cols-2 xl:grid-cols-4 max-w-8xl gap-10 p-20"
+            "md:grid md:grid-cols-2 xl:grid-cols-4 max-w-8xl gap-10 p-5 md:p-20"
           }
         >
           <div>
@@ -233,7 +233,7 @@ const Nav = () => {
           </div>
         </div>
         <div className={"w-full flex justify-center bg-[#141516] text-white"}>
-          <div className={"grid w-full md:grid-cols-3 max-w-8xl gap-10 px-20 py-5"}>
+          <div className={"grid w-full md:grid-cols-3 max-w-8xl gap-10 p-5 md:px-20 py-5"}>
             <Link href={"/"} className="w-full lg:w-[165px]">
               <img className="w-[165px] mx-auto" src="/logo.svg" alt="" />
             </Link>
