@@ -6,12 +6,12 @@ import { FaMapMarked } from "react-icons/fa";
 const Nav = () => {
   return (
     <footer>
-      <div
-        className={
-          "w-full flex flex-col justify-center bg-[#222427] text-white"
-        }
-      >
-        <div className={"grid grid-cols-4 max-w-8xl p-20"}>
+      <div className={"w-full bg-[#222427] text-white"}>
+        <div
+          className={
+            "md:grid md:grid-cols-2 xl:grid-cols-4 max-w-8xl gap-10 p-20"
+          }
+        >
           <div>
             <div className={"flex flex-col gap-3"}>
               <Link className={"text-2xl font-bold"} href={"/"}>
@@ -55,7 +55,7 @@ const Nav = () => {
             </div>
           </div>
           <div>
-            <div className={"flex flex-col gap-3"}>
+            <div className={"flex flex-col md:pt-0 pt-5 gap-3"}>
               <Link className={"text-2xl font-bold"} href={"/"}>
                 Institucional
               </Link>
@@ -116,11 +116,11 @@ const Nav = () => {
             </div>
           </div>
           <div className={"col-span-2"}>
-            <div className={"flex flex-col gap-3"}>
+            <div className={"flex md:pt-0 pt-5 flex-col gap-3"}>
               <Link className={"text-2xl font-bold"} href={"/"}>
                 Cursos para Adultos
               </Link>
-              <div className={"flex gap-20"}>
+              <div className={"flex flex-col md:flex-row justify-between xl:justify-normal md:gap-20"}>
                 <ul className={"pl-3"}>
                   <li className={"flex items-center gap-3"}>
                     <FaCircle className={"text-secondary w-2"} /> Marketing
@@ -185,9 +185,11 @@ const Nav = () => {
                 </ul>
               </div>
             </div>
-            <div className={"flex pt-5 gap-10"}>
+            <div
+              className={"flex flex-col md:flex-row justify-between xl:justify-normal pt-5 gap-10"}
+            >
               <div>
-                <div>
+                <div className={"w-full"}>
                   <h5 className={"text-2xl font-bold"}>¿Donde estamos?</h5>
                   <div className={"flex pt-5 gap-5 items-center"}>
                     <FaMapMarked className={"text-3xl text-primary"} />
@@ -214,9 +216,9 @@ const Nav = () => {
                   </div>
                 </div>
               </div>
-              <div>
+              <div className={"w-full md:text-center"}>
                 <h5 className={"text-2xl font-bold"}>Contactanos</h5>
-                <div className={"flex flex-col pt-5 gap-5 items-center"}>
+                <div className={"flex flex-col pt-5 gap-5 md:items-center"}>
                   <p className={"flex flex-col"}>
                     Informes e inscripción:{" "}
                     <span className={"text-xl"}>(+54-11) 5032-0076</span>
@@ -231,7 +233,7 @@ const Nav = () => {
           </div>
         </div>
         <div className={"w-full flex justify-center bg-[#141516] text-white"}>
-          <div className={"grid w-full grid-cols-3 max-w-8xl px-20 py-5"}>
+          <div className={"grid w-full md:grid-cols-3 max-w-8xl gap-10 px-20 py-5"}>
             <Link href={"/"} className="w-full lg:w-[165px]">
               <img className="w-[165px] mx-auto" src="/logo.svg" alt="" />
             </Link>

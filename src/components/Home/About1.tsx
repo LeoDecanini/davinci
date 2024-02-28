@@ -84,12 +84,6 @@ const About1 = () => {
                   </h2>
                   <p className="mb-5 text-base">{section.description1}</p>
                   <p className="mb-8 text-base">{section.description2}</p>
-                  <Link
-                    href={"/"}
-                    className="inline-flex items-center justify-center py-3 text-base font-medium text-center text-white border border-transparent rounded-md px-7 bg-secondary hover:bg-[#b30c67] hover:bg-opacity-90"
-                  >
-                    {section.buttonLabel}
-                  </Link>
                 </div>
               </div>
             </div>

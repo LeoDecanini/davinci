@@ -27,7 +27,7 @@ const SponsorsList = () => {
     <section className="flex h-full px-2 sm:px-5 md:px-10 py-10 justify-center">
       <div>
         <div className="max-w-7xl w-full">
-          <div className={"pt-10 grid grid-cols-6"}>
+          <div className={"pt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"}>
             {sponsors.map((sponsor, index) => (
               <div key={index}>
                 <img className={"w-full"} src={sponsor.src} alt={sponsor.src} />
