@@ -6,7 +6,7 @@ import { FaMapMarked } from "react-icons/fa";
 const Nav = () => {
   return (
     <footer>
-      <div className={"w-full bg-[#222427] text-white"}>
+      <div className={"w-full bg-muted text-white"}>
         <div
           className={
             "md:grid md:grid-cols-2 xl:grid-cols-4 max-w-8xl gap-10 p-5 md:p-20"

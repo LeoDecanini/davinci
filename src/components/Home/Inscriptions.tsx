@@ -36,7 +36,7 @@ const Inscriptions = () => {
   ];
 
   return (
-    <section className="flex h-full bg-[#222427] relative bg-[url('/fondo-stats.webp')] bg-no-repeat bg-cover px-2 sm:px-5 md:px-10 py-10 justify-center">
+    <section className="flex h-full bg-muted relative bg-[url('/fondo-stats.webp')] bg-no-repeat bg-cover px-2 sm:px-5 md:px-10 py-10 justify-center">
       <div className="max-w-7xl w-full relative">
         <div>
           <h3 className="font-bold text-white text-xl sm:text-3xl md:text-5xl">

@@ -4,11 +4,15 @@ import { FaRegMessage } from "react-icons/fa6";
 import { IoCaretDownOutline } from "react-icons/io5";
 import Link from "next/link";
 import MovileMenu from "@/components/shared/MovileMenu";
+import { usePathname } from "next/navigation";
 
 const Nav = () => {
   const [hover3, setHover3] = useState(false);
 
   const [hoverStates, setHoverStates] = useState([false, false, false]);
+
+  const pathname = usePathname();
+  console.log(pathname);
 
   const handleHover = (index: number) => {
     const newHoverStates = [...hoverStates];
@@ -23,21 +27,21 @@ const Nav = () => {
     {
       title: "CARRERAS",
       links: [
-        { name: "DISEÑO MULTIMEDIAL", url: "/carreras/diseño-multimedial" },
-        { name: "DISEÑO GRÁFICO ARTÍSTICO DIGITAL", url: "#" },
-        { name: "PROGRAMACIÓN DE VIDEOJUEGOS", url: "#" },
-        { name: "CINE DE ANIMACIÓN Y POSPRODUCCIÓN", url: "#" },
-        { name: "DISEÑO Y PROGRAMACION WEB", url: "#" },
-        { name: "ANALISTA DE SISTEMAS", url: "#" },
-        { name: "PROXIMAMENTE: CINE Y NUEVOS FORMATOS", url: "#" },
+        { name: "DISEÑO MULTIMEDIAL", url: "/carreras/diseno-multimedial" },
+        { name: "DISEÑO GRÁFICO ARTÍSTICO DIGITAL", url: "/carreras/diseno-grafico" },
+        { name: "PROGRAMACIÓN DE VIDEOJUEGOS", url: "/carreras/programacion-de-videojuegos" },
+        { name: "CINE DE ANIMACIÓN Y POSPRODUCCIÓN", url: "/carreras/a" },
+        { name: "DISEÑO Y PROGRAMACION WEB", url: "/carreras/a" },
+        { name: "ANALISTA DE SISTEMAS", url: "/carreras/a" },
+        { name: "PROXIMAMENTE: CINE Y NUEVOS FORMATOS", url: "/carreras/a" },
       ],
     },
     {
-      title: "CURRSOS",
+      title: "CURSOS",
       links: [
-        { name: "CURSOS PRESENCIALESL", url: "#" },
-        { name: "CURSOS ONLINE", url: "#" },
-        { name: "CHICOS Y ADOLECENTES", url: "#" },
+        { name: "CURSOS PRESENCIALESL", url: "/cursos/a" },
+        { name: "CURSOS ONLINE", url: "/cursos/a" },
+        { name: "CHICOS Y ADOLECENTES", url: "/cursos/a" },
       ],
     },
   ];
@@ -46,14 +50,14 @@ const Nav = () => {
     {
       title: "ESCUELA",
       links: [
-        { name: "INSTALACIONES", url: "#" },
-        { name: "INSERCIÓN LABORAL", url: "#" },
-        { name: "TITULOS Y LICENCIATURAS", url: "#" },
-        { name: "QUE ES DA VINCI", url: "#" },
-        { name: "FUTUROS ALUMNOS", url: "#" },
-        { name: "DV.TV", url: "#" },
-        { name: "INTRANET", url: "#" },
-        { name: "CAMPUS A DISTANCIA", url: "#" },
+        { name: "INSTALACIONES", url: "/escuela/a" },
+        { name: "INSERCIÓN LABORAL", url: "/escuela/a" },
+        { name: "TITULOS Y LICENCIATURAS", url: "/escuela/a" },
+        { name: "QUE ES DA VINCI", url: "/escuela/a" },
+        { name: "FUTUROS ALUMNOS", url: "/escuela/a" },
+        { name: "DV.TV", url: "/escuela/a" },
+        { name: "INTRANET", url: "/escuela/a" },
+        { name: "CAMPUS A DISTANCIA", url: "/escuela/a" },
       ],
     },
   ];
@@ -84,7 +88,15 @@ const Nav = () => {
                   <div className="text-base xl:text-lg flex items-center gap-2">
                     {item.title} <IoCaretDownOutline />
                   </div>
-                  <div className="h-0.5 bg-primary group-hover:block hidden"></div>
+                  {pathname.includes("/carreras") &&
+                  item.title === "CARRERAS" ? (
+                    <div className="h-0.5 bg-primary group-hover:block"></div>
+                  ) : pathname.includes("/cursos") &&
+                    item.title === "CURSOS" ? (
+                    <div className="h-0.5 bg-primary group-hover:block"></div>
+                  ) : (
+                    <div className="h-0.5 bg-primary group-hover:block hidden"></div>
+                  )}
                 </div>
                 {hoverStates[index] && (
                   <div className="absolute z-50 text-md flex flex-col pt-3 pb-4 px-4 min-w-96 bg-[#161616] top-[78px]">
@@ -106,7 +118,11 @@ const Nav = () => {
             >
               EVENTOS
             </Link>
-            <div className="h-0.5 bg-primary group-hover:block hidden"></div>
+            {pathname.includes("/eventos") ? (
+              <div className="h-0.5 bg-primary group-hover:block"></div>
+            ) : (
+              <div className="h-0.5 bg-primary group-hover:block hidden"></div>
+            )}
           </div>
           <div className="h-full py-8 font-extrabold group">
             <Link
@@ -115,7 +131,11 @@ const Nav = () => {
             >
               NOTICIAS
             </Link>
-            <div className="h-0.5 bg-primary group-hover:block hidden"></div>
+            {pathname.includes("/noticias") ? (
+              <div className="h-0.5 bg-primary group-hover:block"></div>
+            ) : (
+              <div className="h-0.5 bg-primary group-hover:block hidden"></div>
+            )}
           </div>
           <>
             {navItem3.map((item, index) => (
@@ -129,7 +149,12 @@ const Nav = () => {
                   <div className="text-base xl:text-lg flex items-center gap-2">
                     {item.title} <IoCaretDownOutline />
                   </div>
-                  <div className="h-0.5 bg-primary group-hover:block hidden"></div>
+                  {pathname.includes("/escuela") &&
+                  item.title === "CARRERAS" ? (
+                    <div className="h-0.5 bg-primary group-hover:block"></div>
+                  ) : (
+                    <div className="h-0.5 bg-primary group-hover:block hidden"></div>
+                  )}
                 </div>
                 {hover3 && (
                   <div className="absolute z-50 text-md flex flex-col pt-3 pb-4 px-4 min-w-80 bg-[#161616] top-[78px]">

@@ -9,28 +9,21 @@ import Inscriptions from "@/components/Home/Inscriptions";
 import About1 from "@/components/Home/About1";
 import Sponsors from "@/components/Home/Sponsors";
 import SponsorsList from "@/components/Home/SponsorsList";
+import HeroSection from "@/components/shared/HeroSection";
 
 const Home = () => {
   return (
     <>
-      <section className="h-[calc(100vh-94px)] bg-[url('/fondo-inicio-1.webp')] bg-no-repeat bg-cover bg-center relative">
-        <div className="absolute text-white bg-black/40 backdrop-blur p-10 w-full max-w-2xl md:left-[23rem] left-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2">
-          <span className=" font-bold text-xl block">
-            Delivering beautiful digital products
-          </span>
-          <h1 className="text-3xl pt-5 font-bold">
-            Carreras y Cursos Que Integran Tecnología, Comunicación, Arte y
-            Diseño
-          </h1>
-          <p className="py-5 font-bold">
-            Títulos Oficiales • Modalidad de Estudio &#34;A Distancia&#34; o
-            &#34;Presencial&#34;
-          </p>
-          <button className="px-8 py-3 font-bold text-white bg-secondary hover:bg-[#b30c67]">
-            Contactanos
-          </button>
-        </div>
-      </section>
+      <HeroSection
+        backgroundImage="/fondo-inicio-1.webp"
+        title={` Carreras y Cursos Que Integran Tecnología, Comunicación, Arte y
+            Diseño`}
+        subtitle={
+          ' Títulos Oficiales • Modalidad de Estudio "A Distancia" o "Presencial'
+        }
+        buttonText="Contactanos"
+        instinctText="Delivering beautiful digital products"
+      />
       <Info />
       <Events />
       <News />
