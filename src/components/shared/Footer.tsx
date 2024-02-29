@@ -216,9 +216,9 @@ const Nav = () => {
                   </div>
                 </div>
               </div>
-              <div className={"w-full md:text-center"}>
+              <div className={"w-full"}>
                 <h5 className={"text-2xl font-bold"}>Contactanos</h5>
-                <div className={"flex flex-col pt-5 gap-5 md:items-center"}>
+                <div className={"flex flex-col pt-5 gap-5"}>
                   <p className={"flex flex-col"}>
                     Informes e inscripción:{" "}
                     <span className={"text-xl"}>(+54-11) 5032-0076</span>

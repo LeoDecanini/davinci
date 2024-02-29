@@ -12,8 +12,8 @@ const WhatDoYouLearn = ({ whatDoYouLearn }: any) => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 px-2 md:px-10 gap-5 z-10 relative">
-          {whatDoYouLearn.map((item: any, index: any) => (
-            <div key={index} className="shadow-2xl relative z-10">
+          {whatDoYouLearn.cards.map((item: any, index: any) => (
+            <div key={index} className="shadow-xl cursor-pointer hover:shadow-2xl relative z-10">
               <div className="w-full h-1 bg-secondary"></div>
               <div className="bg-white h-full p-5 flex flex-col sm:flex-row items-center gap-3 justify-between">
                 <div className="w-full h-full">
@@ -36,11 +36,7 @@ const WhatDoYouLearn = ({ whatDoYouLearn }: any) => {
             Lenguajes y Software
           </h4>
           <p className={"pt-5"}>
-            Adobe Premiere, Adobe After Effects, Adobe Photoshop, Adobe
-            Illustrator, 3D Studio Max, Substance Painter, Audition, Phoenix FD,
-            HTML5 y CS3, Javascript, PHP, Wordpress, Fume Effects, VRay,
-            Construct, Cinema 4D, Unity, Unreal Engine, Blender y Marmoset
-            Toolbag.
+            {whatDoYouLearn.lenguajes}
           </p>
         </div>
       </div>

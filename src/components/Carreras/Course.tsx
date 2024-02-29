@@ -1,93 +1,7 @@
 import React from "react";
 import { FaCircle } from "react-icons/fa6";
 
-const Course = () => {
-  const cuatrimestres = [
-    {
-      titulo: "Primer Año",
-      imagen: "/diseno-grafico/studio1.webp",
-      cuatrimestres: [
-        {
-          titulo: "1er. Cuatrimestre",
-          asignaturas: [
-            "Ilustración Digital",
-            "Tratamiento Digital de la Imagen I",
-            "Lógica de la Programación",
-            "Diseño Gráfico I",
-            "Representación Gráfica",
-            "Psicología de la Comunicación",
-          ],
-        },
-        {
-          titulo: "2do. Cuatrimestre",
-          asignaturas: [
-            "Guión y Narrativa",
-            "Edición de Sonido y Video",
-            "Maquetado y Desarrollo Web",
-            "Diseño Gráfico II",
-            "Tratamiento Digital de la Imagen II",
-            "Semiología de la Imagen",
-          ],
-        },
-      ],
-    },
-    {
-      titulo: "Segundo Año",
-      imagen: "/diseno-grafico/studio2.webp",
-      cuatrimestres: [
-        {
-          titulo: "3er. Cuatrimestre",
-          asignaturas: [
-            "Producción y Realización Audiovisual",
-            "Posproducción de Sonido y Musicalización",
-            "Experiencia de Usuario",
-            "Desarrollo de Videojuegos",
-            "Diseño y Programación Web I",
-            "Animación en 2D y 3D",
-          ],
-        },
-        {
-          titulo: "4to. Cuatrimestre",
-          asignaturas: [
-            "Postproducción y Efectos Visuales I",
-            "Cultura y medios de Comunicación",
-            "Plataformas de Desarrollo",
-            "Marketing Digital",
-            "Diseño y Programación Web II",
-            "Modelado 3D",
-          ],
-        },
-      ],
-    },
-    {
-      titulo: "Tercer Año",
-      imagen: "/diseno-grafico/studio3.webp",
-      cuatrimestres: [
-        {
-          titulo: "5to. Cuatrimestre",
-          asignaturas: [
-            "Posproducción y Efectos Visuales II",
-            "Ética y Deontología Profesional",
-            "Desarrollo de Aplicaciones Multiplataforma",
-            "Campañas Publicitarias",
-            "Texturas, iluminación y Render 3D",
-            "Animación de Personajes 3D",
-          ],
-        },
-        {
-          titulo: "6to. Cuatrimestre",
-          asignaturas: [
-            "Desarrollo Multimedial",
-            "Realidad Virtual",
-            "Emprendimientos de Negocios",
-            "Simulación de Fluidos 3D",
-            "Proyecto Transmedia",
-          ],
-        },
-      ],
-    },
-  ];
-
+const Course = ({ course }: any) => {
   return (
     <section className="flex h-full p-2 sm:p-5 md:px-10 py-10 justify-center">
       <div className="max-w-7xl w-full">
@@ -101,7 +15,7 @@ const Course = () => {
           </div>
         </div>
         <div className={"grid sm:grid-cols-2 md:grid-cols-3 gap-4 pt-5"}>
-          {cuatrimestres.map((ano, index) => (
+          {course.map((ano: any, index: any) => (
             <>
               <div
                 key={index}
@@ -118,14 +32,14 @@ const Course = () => {
                     </h2>
                   </div>
                   <img className={"w-full"} src={ano.imagen} alt="" />
-                  {ano.cuatrimestres.map((cuatrimestre, i) => (
+                  {ano.cuatrimestres.map((cuatrimestre: any, i: any) => (
                     <div key={i} className="bg-white">
                       <div className={"p-5"}>
                         <h3 className="pb-3 text-2xl font-bold">
                           {cuatrimestre.titulo}
                         </h3>
                         <ul>
-                          {cuatrimestre.asignaturas.map((asignatura, j) => (
+                          {cuatrimestre.asignaturas.map((asignatura: any, j: any) => (
                             <li key={j} className={"flex items-center gap-3"}>
                               <FaCircle className={"w-2 text-primary"} />
                               {asignatura}

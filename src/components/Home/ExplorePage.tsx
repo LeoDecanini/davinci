@@ -58,7 +58,7 @@ const ExplorePage = () => {
                   <div className="overflow-hidden rounded-[10px]">
                     <img src={noticia.imageSrc} alt="portfolio" className="w-full" />
                   </div>
-                  <div className="relative shadow-xl z-10 mx-2 -mt-10 rounded-lg bg-white dark:bg-dark-2 py-6 px-3 text-center shadow-portfolio dark:shadow-box-dark">
+                  <div className="relative shadow-xl cursor-pointer hover:shadow-2xl z-10 mx-2 -mt-10 rounded-lg bg-white dark:bg-dark-2 py-6 px-3 text-center shadow-portfolio dark:shadow-box-dark">
                     <h3 className="text-dark dark:text-white text-3xl font-bold">{noticia.title}</h3>
                     <p className="text-left pt-3">{noticia.description}</p>
                   </div>

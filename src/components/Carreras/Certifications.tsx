@@ -28,7 +28,7 @@ const Certifications = ({ data }: any) => {
                   {index + 1}
                 </div>
                 <div className={"w-full"}>
-                  <h4 className={"md:text-2xl"}>
+                  <h4 className={"md:text-2xl flex flex-col"}>
                     <span className={"font-bold"}>{certification.title}</span>{" "}
                     {certification.description && (
                       <span>{certification.description}</span>
