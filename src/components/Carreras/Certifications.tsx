@@ -23,7 +23,7 @@ const Certifications = ({ data }: any) => {
                 className={"flex flex-col sm:flex-row gap-10 items-center"}
               >
                 <div
-                  className={`py-5 px-${index === 0 ? 8 : 7} text-3xl font-bold text-white rounded-full bg-secondary`}
+                  className={`py-5 ${index === 0 ? "px-8" : "px-7"} text-3xl font-bold text-white rounded-full bg-secondary`}
                 >
                   {index + 1}
                 </div>

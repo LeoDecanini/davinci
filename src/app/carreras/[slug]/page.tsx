@@ -1,9 +1,12 @@
 import React from "react";
 import HeroSection from "@/components/shared/HeroSection";
-import Info from "@/components/Carreras/DiseñoMultimedial/info";
-import Certifications from "@/components/Carreras/DiseñoMultimedial/Certifications";
-import Because from "@/components/Carreras/DiseñoMultimedial/Because";
-import WhatDoYouLearn from "@/components/Carreras/DiseñoMultimedial/WhatDoYouLearn";
+import Info from "@/components/Carreras/info";
+import Certifications from "@/components/Carreras/Certifications";
+import Because from "@/components/Carreras/Because";
+import WhatDoYouLearn from "@/components/Carreras/WhatDoYouLearn";
+import About from "@/components/Carreras/About";
+import Slider from "@/components/Carreras/Slider";
+import Course from "@/components/Carreras/Course";
 
 const carrerasData = [
   {
@@ -135,19 +138,87 @@ const carrerasData = [
           "Desarrollá campañas digitales para Google Ads, Instagram, Facebook, Twitter, Linkedin y Youtube, y aprendé a implementar un plan estratégico publicitario de manera integral, SEO y cómo tener presencia en redes y medios. Colaborá con reconocidos directores de arte, especializados en producciones digitales multiplataforma, en nuestras prácticas profesionales.",
       },
     ],
+    about: [
+      {
+        img1: "/recibidos-1.png",
+        img2: "/recibidos-2.png",
+        img3: "/recibidos-3.png",
+        title: "Talleres",
+        subtitle: "Talleres Especiales",
+        description1:
+          "Hoy en día la industria del diseño, la animación y la programación busca profesionales con capacidad de producir. Escuela Da Vinci tiene la mayor infraestructura tecnológica del país y sus egresados son creativos, productores y desarrolladores con capacidad de trabajar utilizando las herramientas de última generación que se piden hoy en el mercado laboral.",
+        description2:
+          "Cada semestre podés elegir los que más te interesen de entre la oferta específica de ese período. A manera de ejemplo, algunos de los últimos talleres ofrecidos son: efectos especiales y maquillaje de caracterización, iluminación y cámara con Chroma Key, desarrollo mobile con Flex, pre-imprenta y maquetación, tipografía, programación para redes sociales, fotografía, Motion Capture (captura de movimiento), técnicas de encuadernación, construcción del guión de ficción, Real Flow, armado de demo-reel, y animación en Stop-Motion.\n",
+
+        buttonLabel: "Ver mas",
+      },
+      {
+        img1: "/trabajo-1.png",
+        img2: "/trabajo-2.png",
+        img3: "/trabajo-3.png",
+        title: "Trabajo",
+        subtitle: "Campo Laboral",
+        description1:
+          "Estudiar la carrera de Diseño Multimedial en Escuela Da Vinci te convierte en un profesional capaz de trabajar y liderar equipos en importantes agencias de publicidad transmedia, estudios de diseño gráfico, canales de televisión y streaming, posproducción de películas, desarrolladoras de apps, videojuegos, webs, y productos interactivos, departamentos de comunicación de empresas, editoriales, empresas de tecnología y espectáculos, organismos gubernamentales y ONGs.",
+        description2:
+          "Teniendo en cuenta que las compañías buscan profesionales con una formación orgánica y que muchos de nuestros egresados trabajan de manera independiente, creando sus propias empresas y agencias digitales, Escuela Da Vinci ofrece un programa pensado para que puedas desarrollar tu estilo personal y concretar tus propios proyectos.",
+        buttonLabel: "Ver mas",
+      },
+    ],
+    orgullo: [
+      {
+        titulo: "Facundo Brunella",
+        autor: "Leonardo Decanini",
+        imagen: "/diseno-grafico/orgullo-1.webp",
+        subtitulo: "Egresado de Escuela Da Vinci",
+        descripcion:
+          "Facundo es actualmente Motion Designer en la prestigiosa agencia 2veinte, que realizó los videoclips animados para Katy Perry, The Strokes y Spotify. Entre sus clientes se encuentra Disney Japan, la Liga Australiana de Fútbol, Adidas y Nike.",
+      },
+      {
+        titulo: "Agustín Sapio",
+        autor: "Leonardo Decanini",
+        imagen: "/diseno-grafico/orgullo-2.webp",
+        subtitulo: "Egresado de Escuela Da Vinci",
+        descripcion:
+          "Fundó Agencia Ego, su propia agencia de desarrollo y marketing digital, que cuenta con más de 30 empleados en la actualidad. Establecido en Barcelona, fundó The Undefined Project, y cuenta entre sus clientes a Nike, The Coca-Cola Company, Banco Santander Río y más.",
+      },
+      {
+        titulo: "Mauro Serei",
+        autor: "Leonardo Decanini",
+        imagen: "/diseno-grafico/orgullo-3.webp",
+        subtitulo: "Egresado de Escuela Da Vinci",
+        descripcion:
+          "Fue Lead Animator en 100 Bares, la productura de Juan José Campanella, y en la película Metegol. En Canadá trabajó como Animador y Supervisor de Animación de Personajes para SONY Pictures en películas como Cigüeñas y Angry Birds. Actualmente se estableció en Delaware y fundó su agencia: United Skills.",
+      },
+      {
+        titulo: "Joaquín Braga",
+        autor: "Leonardo Decanini",
+        imagen: "/diseno-grafico/orgullo-4.webp",
+        subtitulo: "Egresado de Escuela Da Vinci",
+        descripcion:
+          "Director de 3D, Motion Graphics y Animador de Steinbranding para FOX, Hallmark, ESPN, MTV y otros canales de TV. Fundó Animac 3D, su propia agencia de servicios de animación. Su corto Tanguito ganó numerosos premios en festivales alrededor del mundo.",
+      },
+    ],
   },
 ];
 
 const Page = ({ params }: any) => {
   const slug = params.slug;
-  const carrera = carrerasData.find((carrera) => carrera.slug === slug); // Buscar la carrera por el slug
+  const carrera = carrerasData.find((carrera) => carrera.slug === slug);
 
   if (!carrera) {
     return <p>Carrera no encontrada</p>;
   }
 
-  const { heroSection, info, certifications, because, whatDoYouLearn } =
-    carrera;
+  const {
+    heroSection,
+    info,
+    certifications,
+    because,
+    whatDoYouLearn,
+    about,
+    orgullo,
+  } = carrera;
 
   return (
     <>
@@ -156,6 +227,9 @@ const Page = ({ params }: any) => {
       <Certifications data={certifications} />
       <Because because={because} />
       <WhatDoYouLearn whatDoYouLearn={whatDoYouLearn} />
+      <About about={about} />
+      <Slider orgullo={orgullo} />
+      <Course/>
     </>
   );
 };
