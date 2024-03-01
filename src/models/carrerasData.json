@@ -632,5 +632,335 @@
         }
       ]
     }
+  },
+  {
+    "name": "Programacion de videojuegos",
+    "slug": "programacion-de-videojuegos",
+    "heroSection": {
+      "backgroundImage": "/Carrera-de-Diseño-de-Videojuegos_03.webp",
+      "title": "Carrera de Diseño y Programación de Videojuegos",
+      "subtitle": "Elegí Cómo Estudiar: Modalidad Presencial o A Distancia.",
+      "buttonText": "Ver charlas informativas",
+      "instinctText": "SEGUÍ TU INSTINTO"
+    },
+    "info": [
+      {
+        "title": "20% Off en Inscripción. Cursá Online o Presencial. Inicio en Marzo. ¡Consultanos!",
+        "description": "Descuento para alumnos ingresantes vigente hasta el 9 de Marzo.",
+        "color": "primary",
+        "buttonText": "contactanos"
+      },
+      {
+        "title": "Por qué estudiar Diseño y Programación de Videojuegos",
+        "description": "Charlas Orientativas: El Futuro del Empleo Fecha: Jueves 14 de Marzo a las 18:30",
+        "color": "blue-700",
+        "buttonText": "Ver charla"
+      }
+    ],
+    "certifications": {
+      "sectionTitle": "Certificaciones",
+      "certificationsTitle": "Títulos y Certificaciones",
+      "certificationsDividerColor": "primary",
+      "data": [
+        {
+          "title": "Título Oficial: Diseñador y Programador de Simuladores Virtuales (3 años)",
+          "description": "Res. 294/SSPLINED/2018 - Ministerio de Educación."
+        },
+        {
+          "title": "Certificación Intermedia: Certificación Profesional en Diseño de Videojuegos (2 años)"
+        },
+        {
+          "title": "Licenciatura: Licenciatura en Comunicación Digital e Interactiva",
+          "description": "Articulación con la Universidad Católica Argentina (+1 año)."
+        }
+      ]
+    },
+    "because": {
+      "title": "Por Qué Estudiar Videojuegos",
+      "reasons": [
+        {
+          "title": "Oportunidades en la industria del videojuego",
+          "description": [
+            "La carrera de Diseño y Programación de Videojuegos en Escuela Da Vinci ofrece una formación completa y actualizada para aquellos apasionados por la industria del videojuego. Desde concept art hasta IA avanzada, se cubren todos los aspectos necesarios para desarrollar proyectos desde cero hasta su distribución final, utilizando herramientas líderes como Unity, Unreal Engine 5, Photoshop y más.",
+            "Con un destacado staff docente y una infraestructura tecnológica de primer nivel, esta carrera proporciona una certificación intermedia que permite acceder al mercado laboral rápidamente, mientras se continúa estudiando para obtener una Licenciatura.",
+            "Para quienes buscan una salida laboral más rápida que la universitaria, la carrera de Diseño y Programación de Videojuegos en Escuela Da Vinci ofrece una alternativa intensiva y focalizada. Con un enfoque práctico y teórico, esta opción actualizada proporciona todo el conocimiento necesario para ingresar al mundo de los videojuegos en poco tiempo. Además, los títulos oficiales de la escuela permiten continuar estudios en universidades asociadas y obtener una Licenciatura en el campo."
+          ]
+        },
+        {
+          "title": "Modalidades de Cursada",
+          "description": [
+            "Online o Presencial. Vos elegís. En el caso de estudiar la carrera a distancia, siempre es con clases en vivo, acceso virtual a materiales, y seguimiento personalizado. También podés cursar en la sede de Escuela Da Vinci en pleno centro de Buenos Aires, Argentina."
+          ]
+        },
+        {
+          "title": "Por qué el Desarrollo de Videojuegos es considerado una de las profesiones del futuro",
+          "description": [
+            "Para tener una perspectiva del vertiginoso crecimiento de la industria de los videojuegos bastan sólo un par de datos. En Argentina, en sólo seis años se duplicó el número de empresas del sector. A nivel mundial, el mercado de los videojuegos generó más de 130 mil millones de dólares (sí, 130 MIL MILLONES) y, según el último reporte de Global Data, gracias a innovaciones como Mobile y Cloud Gaming, llegará a generar 300 mil millones para el año 2025.",
+            "Nuestro enorme equipamiento tecnológico te permite estudiar dentro de un marco de experimentación e intercambio, a la vez que te da acceso a nuestro exclusivo sistema de bolsa de trabajo y pasantías, a través del cual vinculamos a más de 1500 alumnos por año con empresas líderes en el mercado."
+          ]
+        },
+        {
+          "title": "Prácticas Profesionales Durante la Carrera",
+          "description": [
+            "Los alumnos se involucran en proyectos de empresas activas a través de prácticas profesionales, donde trabajan con profesionales de la industria y adquieren experiencia real. Algunas de las empresas colaboradoras incluyen Nvidia, GeForce, Gigabyte, Vorterix, Planetario de Buenos Aires, Globant, MercadoLibre, El Club de la Milanesa, CPM Cinemas, Temple Bar, Martin & Martin, y Argentina Game Show.",
+            "Colaboramos en proyectos con otras universidades, como el desarrollo de marca para Embrace It junto a la Universidad Católica Argentina y la IHECS Brussels School of Jornalism & Communication. Además, ofrecemos una opción de carrera intensiva y actualizada en Diseño Gráfico, enfocada en proporcionar rápidamente el conocimiento necesario para iniciar una carrera en el diseño."
+          ]
+        }
+      ],
+      "videoSrc": "https://www.youtube.com/watch?v=93CD9RRWjAQ",
+      "images": [
+        "/videojuegos/1.webp",
+        "/videojuegos/2.webp",
+        "/videojuegos/3.webp",
+        "/videojuegos/4.webp",
+        "/videojuegos/5.webp",
+        "/videojuegos/6.jpg"
+      ]
+    },
+    "whatDoYouLearn": {
+      "lenguajes": "Unity, Unreal Engine 5, C#, Photoshop, Visual Studio, Dragon Bones, Construct, Maya 3D, Substance Designer, Substance Painter, Marvelous Designer, Spine, Designer Marmoset, y ZBrush.",
+      "cards": [
+        {
+          "title": "Unity Game Engine y Unreal Engine",
+          "image": "/videojuegos/a1.jpg",
+          "description": "Dominá Unity y Unreal, dos de los motores de creación más usados en el mundo en la creación de juegos independientes hasta desarrollos AAA."
+        },
+        {
+          "title": "Realidad Virtual con HTC Vive",
+          "image": "/videojuegos/a2.jpeg",
+          "description": "Aprendé a crear experiencias virtuales en los que el jugador se sumerja por completo utilizando la tecnología del HTC Vive."
+        },
+        {
+          "title": "Game Design",
+          "image": "/videojuegos/a3.webp",
+          "description": "Aprendé diseño de juegos creando las reglas, situaciones y obstáculos guiados a transmitir una experiencia única a los usuarios."
+        },
+        {
+          "title": "Concept Art",
+          "image": "/videojuegos/a4.png",
+          "description": "Conocé técnicas de ilustración para guiar el proceso artístico y creativo de un juego."
+        },
+        {
+          "title": "Juegos para Todas las Plataformas",
+          "image": "/videojuegos/a5.webp",
+          "description": "Diseñá y programá para todas las plataformas de videojuegos disponibles, incluyendo Xbox 360 y Playstation, iOS (iPhone, iPad), Android y PC, conociendo y explotando sus posibilidades al máximo."
+        },
+        {
+          "title": "Juegos Multijugador",
+          "image": "/videojuegos/a6.jpg",
+          "description": "Desarrollá juegos especialmente pensados para su uso online y en redes sociales."
+        },
+        {
+          "title": "Render y Animación 3D",
+          "image": "/videojuegos/a7.jpg",
+          "description": "Internate en el excitante campo de la animación para videojuegos, la creación de fondos y escenarios en tres dimensiones."
+        },
+        {
+          "title": "Creación de Escenarios Complejos",
+          "image": "/videojuegos/a8.jpeg",
+          "description": "Creación de escenarios múltiples e historias complejas. Aprendé a guionar historias que cautiven a tu audiencia, manteniendo el suspenso y el entretenimiento a la par."
+        },
+        {
+          "title": "Diseño Interactivo",
+          "image": "/videojuegos/a9.jpeg",
+          "description": "Desarrollá apps, webs y diversos formatos interactivos para darle una buena experiencia al usuario."
+        },
+        {
+          "title": "Diseño y Representación Gráfica",
+          "image": "/videojuegos/a10.jpeg",
+          "description": "Desde escenarios y vestuario hasta character design, explorá tus posibilidades creativas con lo último en software para diseño de imagen."
+        },
+        {
+          "title": "Inteligencia Artificial",
+          "image": "/videojuegos/a11.jpg",
+          "description": "Aprendé a desarrollar IA para generar comportamientos responsivos, adaptativos e inteligentes en personajes y sistemas."
+        },
+        {
+          "title": "Realidad Aumentada",
+          "image": "/videojuegos/a12.jpeg",
+          "description": "Dominá la integración del contenido visual y auditivo del juego con el ambiente del jugador en tiempo real."
+        }
+      ]
+    },
+    "about": [
+      {
+        "img1": "/recibidos-1.png",
+        "img2": "/recibidos-2.png",
+        "img3": "/recibidos-3.png",
+        "title": "Talleres",
+        "subtitle": "Talleres Especiales",
+        "description1": "Los talleres especiales son cursos gratuitos para alumnos de carreras. Son clases adicionales que te permiten combinar conocimientos en campos experimentales, complementar lo aprendido en clase y actualizarte con herramientas modernas. Cada semestre puedes elegir los que más te interesen de una lista específica.",
+        "description2": "Algunos ejemplos recientes incluyen creación de efectos y partículas, UI/UX para videojuegos, simulación de telas, realidad virtual, desarrollo de aplicaciones para iPad, marketing digital, fotografía, dirección de videojuegos, cine de ciencia ficción, efectos especiales y motion capture.",
+        "buttonLabel": "Ver mas"
+      },
+      {
+        "img1": "/trabajo-1.png",
+        "img2": "/trabajo-2.png",
+        "img3": "/trabajo-3.png",
+        "title": "Trabajo",
+        "subtitle": "Campo Laboral",
+        "description1": "Estudiar Diseño y Programación de Videojuegos en Escuela Da Vinci te permite desarrollar habilidades en áreas clave de la industria, como programación de gameplay para redes, creación de frameworks y motores propios, game design y level design, modelado 3D de bajo polígono, desarrollo de juegos para web y aplicaciones móviles, realidad virtual y aplicación de inteligencia artificial en la simulación y programación de videojuegos.",
+        "description2": "Durante la pandemia de COVID-19, el trabajo remoto y las especializaciones tecnológicas se volvieron esenciales, destacando la importancia de una sólida educación digital en el mercado laboral actual y futuro. Los egresados de la escuela encuentran oportunidades en productoras de videojuegos, agencias publicitarias y como desarrolladores independientes, tanto a nivel nacional como internacional, en roles relacionados con ingeniería, diseño de simulaciones virtuales y desarrollo de videojuegos.",
+        "buttonLabel": "Ver mas"
+      }
+    ],
+    "orgullo": [
+      {
+        "titulo": "Facundo Brunella",
+        "autor": "Leonardo Decanini",
+        "imagen": "/diseno-grafico/orgullo-1.webp",
+        "subtitulo": "Egresado de Escuela Da Vinci",
+        "descripcion": "Facundo es actualmente Motion Designer en la prestigiosa agencia 2veinte, que realizó los videoclips animados para Katy Perry, The Strokes y Spotify. Entre sus clientes se encuentra Disney Japan, la Liga Australiana de Fútbol, Adidas y Nike."
+      },
+      {
+        "titulo": "Agustín Sapio",
+        "autor": "Leonardo Decanini",
+        "imagen": "/diseno-grafico/orgullo-2.webp",
+        "subtitulo": "Egresado de Escuela Da Vinci",
+        "descripcion": "Fundó Agencia Ego, su propia agencia de desarrollo y marketing digital, que cuenta con más de 30 empleados en la actualidad. Establecido en Barcelona, fundó The Undefined Project, y cuenta entre sus clientes a Nike, The Coca-Cola Company, Banco Santander Río y más."
+      },
+      {
+        "titulo": "Mauro Serei",
+        "autor": "Leonardo Decanini",
+        "imagen": "/diseno-grafico/orgullo-3.webp",
+        "subtitulo": "Egresado de Escuela Da Vinci",
+        "descripcion": "Fue Lead Animator en 100 Bares, la productura de Juan José Campanella, y en la película Metegol. En Canadá trabajó como Animador y Supervisor de Animación de Personajes para SONY Pictures en películas como Cigüeñas y Angry Birds. Actualmente se estableció en Delaware y fundó su agencia: United Skills."
+      },
+      {
+        "titulo": "Joaquín Braga",
+        "autor": "Leonardo Decanini",
+        "imagen": "/diseno-grafico/orgullo-4.webp",
+        "subtitulo": "Egresado de Escuela Da Vinci",
+        "descripcion": "Director de 3D, Motion Graphics y Animador de Steinbranding para FOX, Hallmark, ESPN, MTV y otros canales de TV. Fundó Animac 3D, su propia agencia de servicios de animación. Su corto Tanguito ganó numerosos premios en festivales alrededor del mundo."
+      }
+    ],
+    "course": [
+      {
+        "titulo": "Primer Año",
+        "imagen": "/diseno-grafico/studio1.webp",
+        "cuatrimestres": [
+          {
+            "titulo": "1er. Cuatrimestre",
+            "asignaturas": [
+              "Elementos de Matemática",
+              "Tratamiento Digital de la Imagen I",
+              "Animación 2D para Videojuegos",
+              "Ilustración Conceptual",
+              "Lógica de la Programación",
+              "Introducción al Diseño de Juegos"
+            ]
+          },
+          {
+            "titulo": "2do. Cuatrimestre",
+            "asignaturas": [
+              "Programación I",
+              "Construcción del Guion",
+              "Modelado 3D",
+              "Cálculo y Estadística",
+              "Diseño Gráfico",
+              "Tratamiento Digital de la Imagen II"
+            ]
+          }
+        ]
+      },
+      {
+        "titulo": "Segundo Año",
+        "imagen": "/diseno-grafico/studio2.webp",
+        "cuatrimestres": [
+          {
+            "titulo": "3er. Cuatrimestre",
+            "asignaturas": [
+              "Programación II",
+              "Aplicación de Motores I",
+              "Diseño y Producción de Juegos",
+              "Animación y modelado de personajes",
+              "Física aplicada",
+              "Psicología del Entretenimiento"
+            ]
+          },
+          {
+            "titulo": "4to. Cuatrimestre",
+            "asignaturas": [
+              "Inteligencia Artificial I",
+              "Efectos Visuales",
+              "Diseño de Niveles",
+              "Geometría Espacial",
+              "Aplicación de Motores II",
+              "Modelos y algoritmos I"
+            ]
+          }
+        ]
+      },
+      {
+        "titulo": "Tercer Año",
+        "imagen": "/diseno-grafico/studio3.webp",
+        "cuatrimestres": [
+          {
+            "titulo": "5to. Cuatrimestre",
+            "asignaturas": [
+              "Escenarios e Interfaces",
+              "Desarrollo para Redes",
+              "Programación de Motores",
+              "Modelos y Algoritmos II",
+              "Inteligencia Artificial II",
+              "Estrategias y Tácticas"
+            ]
+          },
+          {
+            "titulo": "6to. Cuatrimestre",
+            "asignaturas": [
+              "Postproducción de Videojuegos",
+              "Ética y Deontología Profesional",
+              "Programación de Motores II",
+              "Producción de Recursos Digitales",
+              "Proyecto Final"
+            ]
+          }
+        ]
+      }
+    ],
+    "licenciatures": {
+      "title": "Licenciaturas",
+      "description": "Escuela Da Vinci ofrece carreras con un alto grado de especialización y una rápida inserción laboral, tanto en el mercado nacional como en el internacional, además de la oportunidad de seguir estudiando carreras universitarias a través de convenios con las mejores universidades argentinas. Ellas convalidan el título obtenido en Da Vinci y te permiten obtener tu Licenciatura. Consultanos acerca de esta opción.",
+      "institutionsTitle": "Estas son las instituciones con las que mantenemos acuerdos de articulación universitaria:",
+      "discountInfo": "* La Lic. En comunicación Digital e Interactiva de UCA tiene para DV un descuento en cuota del 20%",
+      "institutions": [
+        {
+          "name": "Universidad Católica Argentina",
+          "program": "Licenciatura en comunicación Digital e Interactiva",
+          "duration": "+1 año"
+        }
+      ]
+    },
+    "teams": {
+      "title": "coordinadores de la carrera",
+      "subtitle": "Coordinación y Profesores",
+      "members": [
+        {
+          "name": "Guido Tondo",
+          "role": "Coordinación general",
+          "bio": "Artista 3D con más de 15 años de experiencia. Clientes: Planetario de la Ciudad de Buenos Aires, Speed, Sprite, Amstel Beer, Christian Dior, Sancor Seguros, Tarjeta Naranja, Bosch, Samsung, AMD, Juegos Olímpicos de la Juventud y videojuegos independientes.",
+          "image": "/videojuegos/profe-1.jpg"
+        },
+        {
+          "name": "Diego Brezca",
+          "role": "Coordinación general",
+          "bio": "Diseñador gráfico (UBA). Se especializa en Ui/Ux, dirección de arte y guiones para videojuegos. Fue mentor en #Potenciate y director en la productora CBM media.",
+          "image": "/videojuegos/profe-2.webp"
+        },
+        {
+          "name": "Paula Panizzi",
+          "role": "Coordinación general",
+          "bio": "Diseñadora gráfica (UBA). Se desempeña como freelancer en ilustración digital, diseño de UI/UX, diseño de personajes y assets para videojuegos, arte narrativo y concept art.",
+          "image": "/videojuegos/profe-3.webp"
+        },
+        {
+          "name": "Fabricio Fleitas",
+          "role": "Coordinación general",
+          "bio": "Diseñador multimedial (Escuela Da Vinci), Lead Artist en Whiteboard Games y docente en las carreras de Videojuegos, Diseño Multimedial y Diseño Gráfico. Participó en producciones audiovisuales como \"El Principito\" (Planetario Galileo Galilei de la Ciudad de Buenos Aires).",
+          "image": "/videojuegos/profe-4.jpg"
+        }
+      ]
+    }
   }
 ]

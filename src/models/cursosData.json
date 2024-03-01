@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Cursos Presenciales",
+    "slug": "cursos-presenciales",
+    "heroSection": {
+      "backgroundImage": "/cursos-presenciales/cursos_hero-web.webp",
+      "title": "Carrera de Diseño Multimedia",
+      "subtitle": "Elegí Cómo Estudiar: Modalidad Presencial o A Distancia.",
+      "buttonText": "Ver charlas informativas",
+      "instinctText": "SEGUÍ TU INSTINTO"
+    },
+    "info": [
+      {
+        "title": "Pagos de hasta en 12 cuotas",
+        "description": "Con todas las tarjetas de crédito",
+        "color": "primary",
+        "buttonText": "contactanos"
+      },
+      {
+        "title": "10% de Descuento para Estudiantes",
+        "description": "De cualquier universidad argentina",
+        "color": "blue-700",
+        "buttonText": "Ver charla"
+      }
+    ]
+  }
+]

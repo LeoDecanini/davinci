@@ -28,20 +28,26 @@ const Nav = () => {
       title: "CARRERAS",
       links: [
         { name: "DISEÑO MULTIMEDIAL", url: "/carreras/diseno-multimedial" },
-        { name: "DISEÑO GRÁFICO ARTÍSTICO DIGITAL", url: "/carreras/diseno-grafico" },
-        { name: "PROGRAMACIÓN DE VIDEOJUEGOS", url: "/carreras/programacion-de-videojuegos" },
-        { name: "CINE DE ANIMACIÓN Y POSPRODUCCIÓN", url: "/carreras/a" },
+        {
+          name: "DISEÑO GRÁFICO ARTÍSTICO DIGITAL",
+          url: "/carreras/diseno-grafico",
+        },
+        {
+          name: "PROGRAMACIÓN DE VIDEOJUEGOS",
+          url: "/carreras/programacion-de-videojuegos",
+        },
+        /*{ name: "CINE DE ANIMACIÓN Y POSPRODUCCIÓN", url: "/carreras/a" },
         { name: "DISEÑO Y PROGRAMACION WEB", url: "/carreras/a" },
         { name: "ANALISTA DE SISTEMAS", url: "/carreras/a" },
-        { name: "PROXIMAMENTE: CINE Y NUEVOS FORMATOS", url: "/carreras/a" },
+        { name: "PROXIMAMENTE: CINE Y NUEVOS FORMATOS", url: "/carreras/a" },*/
       ],
     },
     {
       title: "CURSOS",
       links: [
-        { name: "CURSOS PRESENCIALESL", url: "/cursos/a" },
-        { name: "CURSOS ONLINE", url: "/cursos/a" },
-        { name: "CHICOS Y ADOLECENTES", url: "/cursos/a" },
+        { name: "CURSOS PRESENCIALES", url: "/cursos/cursos-presenciales" },
+        { name: "CURSOS ONLINE", url: "/cursos/cursos-online" },
+        { name: "CHICOS Y ADOLECENTES", url: "/cursos/chicos-y-adolecentes" },
       ],
     },
   ];
@@ -101,9 +107,13 @@ const Nav = () => {
                 {hoverStates[index] && (
                   <div className="absolute z-50 text-md flex flex-col pt-3 pb-4 px-4 min-w-96 bg-[#161616] top-[78px]">
                     {item.links.map((link, i) => (
-                      <div key={i} className="w-full p-1  hover:bg-primary">
-                        <Link href={link.url}>{link.name}</Link>
-                      </div>
+                      <Link
+                        href={link.url}
+                        key={i}
+                        className="w-full p-1  hover:bg-primary"
+                      >
+                        <span>{link.name}</span>
+                      </Link>
                     ))}
                   </div>
                 )}
@@ -159,9 +169,13 @@ const Nav = () => {
                 {hover3 && (
                   <div className="absolute z-50 text-md flex flex-col pt-3 pb-4 px-4 min-w-80 bg-[#161616] top-[78px]">
                     {item.links.map((link, i) => (
-                      <div key={i} className="w-full p-1  hover:bg-primary">
-                        <Link href={link.url}>{link.name}</Link>
-                      </div>
+                      <Link
+                        href={link.url}
+                        key={i}
+                        className="w-full p-1  hover:bg-primary"
+                      >
+                        <span>{link.name}</span>
+                      </Link>
                     ))}
                   </div>
                 )}
