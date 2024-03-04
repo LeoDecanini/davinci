@@ -4,23 +4,611 @@
     "slug": "cursos-presenciales",
     "heroSection": {
       "backgroundImage": "/cursos-presenciales/cursos_hero-web.webp",
-      "title": "Carrera de Diseño Multimedia",
-      "subtitle": "Elegí Cómo Estudiar: Modalidad Presencial o A Distancia.",
-      "buttonText": "Ver charlas informativas",
-      "instinctText": "SEGUÍ TU INSTINTO"
+      "title": "Mejorá Tus Conocimientos o Incursioná en una Nueva Profesión",
+      "subtitle": "Cursos Online y Presenciales",
+      "instinctText": "Da Vinci. Un Universo Diferente."
     },
     "info": [
       {
         "title": "Pagos de hasta en 12 cuotas",
         "description": "Con todas las tarjetas de crédito",
-        "color": "primary",
         "buttonText": "contactanos"
       },
       {
         "title": "10% de Descuento para Estudiantes",
         "description": "De cualquier universidad argentina",
-        "color": "blue-700",
         "buttonText": "Ver charla"
+      }
+    ],
+    "introduction": [
+      "Nuestros cursos son una apuesta a una educación personalizada, que alienta al individuo a armarse un camino único de acuerdo a sus talentos e intereses. Como base recomendamos nuestros Cursos de Formación Profesional, programas integrales de 84/85 horas que permiten al alumno adentrarse en una nueva profesión, contemplando aspectos de software, diseño, arte y marketing, al tiempo que desarrolla proyectos personales con la tutoría de los profesores. Incluyen Horas de Taller donde aplicás los conocimientos adquiridos, para que salgas del curso con trabajos bien terminados y puedas exhibirlos en tu reel o porfolio inmediatamente.",
+      "También ofrecemos Cursos Introductorios y capacitación en áreas y programas puntuales; Cursos para Chicos y Estudiantes Secundarios."
+    ],
+    "cursos": [
+      {
+        "titulo": "Diseño Gráfico",
+        "cards": [
+          {
+            "titulo": "Diseño Gráfico Digital",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (Photoshop + Illustrator + InDesign + Nociones de Diseño)",
+            "recomendado": true,
+            "icon": "IoIosImage"
+          },
+          {
+            "titulo": "Photoshop Inicial",
+            "type": "Curso Básico",
+            "descripcion": "24 horas (Fotomontaje + Publicaciones en Redes Sociales + Posproducción Fotográfica)",
+            "icon": "DiPhotoshop"
+          },
+          {
+            "titulo": "Illustrator Inicial",
+            "type": "Curso Básico",
+            "descripcion": "24 horas (Ilustración Vectorial + Flyers + Imágenes para Redes Sociales)",
+            "icon": "DiIllustrator"
+          },
+          {
+            "titulo": "Lettering",
+            "type": "Curso Corto",
+            "descripcion": "36 horas (Letras dibujadas a mano para principiantes, diseñadores e ilustradores)",
+            "icon": "MdOutlineTypeSpecimen"
+          }
+        ]
+      },
+      {
+        "titulo": "Marketing Digital y Desarrollo Web",
+        "cards": [
+          {
+            "titulo": "Marketing Digital",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (Marketing tradicional + Redes sociales y estrategias online + Contenido + Técnica informática)",
+            "recomendado": true,
+            "icon": "MdOutlineWeb"
+          },
+          {
+            "titulo": "Desarrollo de Sitios Web",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 (horas HTML - CSS - Bootstrap - Hosting - Wordpress - E-commerce)",
+            "recomendado": true,
+            "icon": "MdOutlineHtml"
+          },
+          {
+            "titulo": "UX - Experiencia de Usuario y Negocio",
+            "type": "Curso Corto",
+            "descripcion": "36 horas\n\nTeoría y Diseño UX + Prototipado de Web y App",
+            "icon": "LiaUsersSolid"
+          },
+          {
+            "titulo": "WordPress",
+            "type": "Curso Corto",
+            "descripcion": "36 horas\n\nDiseño Web + Gestión + SEO + E-Commerce",
+            "icon": "FaWordpress"
+          }
+        ]
+      },
+      {
+        "titulo": "Videojuegos y Arte 3D",
+        "cards": [
+          {
+            "titulo": "Realización Integral de Videojuegos 2D",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (Diseño de Juegos + Prototipos Digitales + Construct 2)",
+            "recomendado": true,
+            "icon": "SiLegacygames"
+          },
+          {
+            "titulo": "Arte para Videojuegos 2D",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (Concept Art + Producción + Animación con Adobe Animate y Spine + User Interface + Gráficos con Photoshop)",
+            "recomendado": true,
+            "icon": "SiGamebanana"
+          },
+          {
+            "titulo": "Unreal: Escenarios 3D para Videojuegos y Animación",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (Arte Conceptual + Blender + ZBrush + Substance Painter)",
+            "recomendado": true,
+            "icon": "SiUnrealengine"
+          },
+          {
+            "titulo": "Arte 3D: Animación 3D",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (Animación y Render con Maya + Concept Art + Seminario de Motion Capture)",
+            "recomendado": true,
+            "icon": "GiGameConsole"
+          },
+          {
+            "titulo": "Arte 3D: Escultura Digital con ZBrush",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (Modelado y Escultura Digital 3D con ZBrush)",
+            "recomendado": true,
+            "icon": "PiTreeStructure"
+          },
+          {
+            "titulo": "Modelado 3D y Render",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (3D Studio Max + Keyshot + VRay)",
+            "recomendado": true,
+            "icon": "SiCoronarenderer"
+          },
+          {
+            "titulo": "Diseño y Modelado 3D con Blender",
+            "type": "Curso Corto",
+            "descripcion": "36 horas (Blender para Diseño y Arte 3D)",
+            "icon": "SiBlender"
+          }
+        ]
+      }
+    ],
+    "cursos2": [
+      {
+        "titulo": "Edición de Video y Cine Digital",
+        "cards": [
+          {
+            "titulo": "Motion Graphics Publicitario",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (After Effects + Cinema 4D + Adobe Premiere)",
+            "recomendado": true,
+            "icon": "MdOutlineAutoAwesomeMotion"
+          },
+          {
+            "titulo": "Adobe Premiere",
+            "type": "Curso Básico",
+            "descripcion": "24 horas (Posproducción y Edición de Video y Sonido)",
+            "icon": "SiAdobepremierepro"
+          },
+          {
+            "titulo": "Inicio al Adobe After Effects",
+            "type": "Curso Básico",
+            "descripcion": "24 horas (Animaciones + VFX + Corrección de Color e Imagen)",
+            "icon": "SiAdobeaftereffects"
+          }
+        ]
+      },
+      {
+        "titulo": "Ilustración y Comics",
+        "cards": [
+          {
+            "titulo": "Ilustración Artística/Digital: Iniciación",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (Ilustración Tradicional + Ilustración Digital con Photoshop)",
+            "recomendado": true,
+            "icon": "PiPaintBrushDuotone"
+          },
+          {
+            "titulo": "Ilustración de Autor: Exploración de Estilo y Narrativa Visual",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (Narrativa Visual + Técnicas Diversas + InDesign + Intervenciones Animadas)",
+            "recomendado": true,
+            "icon": "LuFileText"
+          },
+          {
+            "titulo": "Ilustración A/D: Anatomía Avanzada y Morfología Animal",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (Bellas Artes + Pintura con Photoshop + Taller de Anatomía Humana y de Criaturas Fantásticas)",
+            "recomendado": true,
+            "icon": "BsPersonWalking"
+          },
+          {
+            "titulo": "Comics: Realización Integral",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (Guión + Diseño de Personajes + Figura humana y expresión + Criaturas + Entintado artístico y digital)",
+            "recomendado": true,
+            "icon": "FaBookOpen"
+          },
+          {
+            "titulo": "Realización de Manga",
+            "type": "Curso Corto",
+            "descripcion": "36 horas (Técnicas tradicionales y digitales + Anatomía + Diseño de Página + Narrativa)",
+            "icon": "BiBookAlt"
+          }
+        ]
+      },
+      {
+        "titulo": "Fotografía",
+        "cards": [
+          {
+            "titulo": "Fotografía",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (Cámara + Lentes + Técnicas + Lightroom + Photoshop)",
+            "new": true,
+            "icon": "FaCamera"
+          }
+        ]
+      },
+      {
+        "titulo": "Para Docentes",
+        "cards": [
+          {
+            "titulo": "Tecnología Educativa para Docentes",
+            "type": "Curso Especial",
+            "descripcion": "84 horas (Photoshop + Illustrator + Powerpoint + Diseño Interactivo para Educación)",
+            "new": true,
+            "icon": "FaChalkboardTeacher"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cursos Online",
+    "slug": "cursos-online",
+    "heroSection": {
+      "backgroundImage": "/cursos-online/cursos_hero-web.webp",
+      "title": "Estudiá Desde Donde Estés",
+      "subtitle": "Cursos Online",
+      "instinctText": "Da Vinci. Un Universo Diferente."
+    },
+    "info": [
+      {
+        "title": "Pagos de hasta en 12 cuotas",
+        "description": "Con todas las tarjetas de crédito",
+        "buttonText": "contactanos"
+      },
+      {
+        "title": "10% de Descuento para Estudiantes",
+        "description": "De cualquier universidad argentina",
+        "buttonText": "Ver charla"
+      }
+    ],
+    "introduction": [
+      "Ahora ampliamos las posibilidades para que puedas estudiar en Da Vinci, la escuela clásica de multimedia y arte digital de Latinoamérica, desde donde estés, accediendo online a la misma calidad de educación que reciben nuestros estudiantes en las sedes presenciales.",
+      "Nuestros cursos son una apuesta a una educación personalizada, que alienta al individuo a armarse un camino único de acuerdo a sus talentos e intereses. Como base recomendamos nuestros Cursos de Formación Profesional, programas integrales que permiten al alumno adentrarse en una nueva profesión, contemplando aspectos de software, diseño, arte y marketing, al tiempo que desarrolla proyectos personales con la tutoría de los profesores. Incluyen Horas de Taller donde aplicás los conocimientos adquiridos, para que salgas del curso con trabajos bien terminados y puedas exhibirlos en tu reel o porfolio inmediatamente.",
+      "También ofrecemos Cursos Introductorios y capacitación en áreas y programas puntuales; Cursos para Chicos y Estudiantes Secundarios o Pre-Universitarios. Con clases en vivo, aulas virtuales ágiles y fáciles de usar, y grupos reducidos para mejor seguimiento de cada alumno, nuestros renovados cursos online traen la escuela a tu casa. Explorá todas las opciones:"
+    ],
+    "cursos": [
+      {
+        "titulo": "Diseño Gráfico",
+        "cards": [
+          {
+            "titulo": "Diseño Gráfico Digital",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (Photoshop + Illustrator + InDesign + Nociones de Diseño)",
+            "recomendado": true,
+            "icon": "IoIosImage"
+          },
+          {
+            "titulo": "Photoshop Inicial",
+            "type": "Curso Básico",
+            "descripcion": "24 horas (Fotomontaje + Publicaciones en Redes Sociales + Posproducción Fotográfica)",
+            "icon": "DiPhotoshop"
+          },
+          {
+            "titulo": "Illustrator Inicial",
+            "type": "Curso Básico",
+            "descripcion": "24 horas (Ilustración Vectorial + Flyers + Imágenes para Redes Sociales)",
+            "icon": "DiIllustrator"
+          },
+          {
+            "titulo": "Lettering",
+            "type": "Curso Corto",
+            "descripcion": "36 horas (Letras dibujadas a mano para principiantes, diseñadores e ilustradores)",
+            "icon": "MdOutlineTypeSpecimen"
+          }
+        ]
+      },
+      {
+        "titulo": "Marketing Digital y Desarrollo Web",
+        "cards": [
+          {
+            "titulo": "Marketing Digital",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (Marketing tradicional + Redes sociales y estrategias online + Contenido + Técnica informática)",
+            "recomendado": true,
+            "icon": "MdOutlineWeb"
+          },
+          {
+            "titulo": "Desarrollo de Sitios Web",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 (horas HTML - CSS - Bootstrap - Hosting - Wordpress - E-commerce)",
+            "recomendado": true,
+            "icon": "MdOutlineHtml"
+          },
+          {
+            "titulo": "UX - Experiencia de Usuario y Negocio",
+            "type": "Curso Corto",
+            "descripcion": "36 horas\n\nTeoría y Diseño UX + Prototipado de Web y App",
+            "icon": "LiaUsersSolid"
+          },
+          {
+            "titulo": "WordPress",
+            "type": "Curso Corto",
+            "descripcion": "36 horas\n\nDiseño Web + Gestión + SEO + E-Commerce",
+            "icon": "FaWordpress"
+          }
+        ]
+      },
+      {
+        "titulo": "Videojuegos y Arte 3D",
+        "cards": [
+          {
+            "titulo": "Realización Integral de Videojuegos 2D",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (Diseño de Juegos + Prototipos Digitales + Construct 2)",
+            "recomendado": true,
+            "icon": "SiLegacygames"
+          },
+          {
+            "titulo": "Arte para Videojuegos 2D",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (Concept Art + Producción + Animación con Adobe Animate y Spine + User Interface + Gráficos con Photoshop)",
+            "recomendado": true,
+            "icon": "SiGamebanana"
+          },
+          {
+            "titulo": "Unreal: Escenarios 3D para Videojuegos y Animación",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (Arte Conceptual + Blender + ZBrush + Substance Painter)",
+            "recomendado": true,
+            "icon": "SiUnrealengine"
+          },
+          {
+            "titulo": "Arte 3D: Animación 3D",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (Animación y Render con Maya + Concept Art + Seminario de Motion Capture)",
+            "recomendado": true,
+            "icon": "GiGameConsole"
+          },
+          {
+            "titulo": "Arte 3D: Escultura Digital con ZBrush",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (Modelado y Escultura Digital 3D con ZBrush)",
+            "recomendado": true,
+            "icon": "PiTreeStructure"
+          },
+          {
+            "titulo": "Modelado 3D y Render",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (3D Studio Max + Keyshot + VRay)",
+            "recomendado": true,
+            "icon": "SiCoronarenderer"
+          },
+          {
+            "titulo": "Diseño y Modelado 3D con Blender",
+            "type": "Curso Corto",
+            "descripcion": "36 horas (Blender para Diseño y Arte 3D)",
+            "icon": "SiBlender"
+          }
+        ]
+      }
+    ],
+    "cursos2": [
+      {
+        "titulo": "Edición de Video y Cine Digital",
+        "cards": [
+          {
+            "titulo": "Motion Graphics Publicitario",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (After Effects + Cinema 4D + Adobe Premiere)",
+            "recomendado": true,
+            "icon": "MdOutlineAutoAwesomeMotion"
+          },
+          {
+            "titulo": "Adobe Premiere",
+            "type": "Curso Básico",
+            "descripcion": "24 horas (Posproducción y Edición de Video y Sonido)",
+            "icon": "SiAdobepremierepro"
+          },
+          {
+            "titulo": "Inicio al Adobe After Effects",
+            "type": "Curso Básico",
+            "descripcion": "24 horas (Animaciones + VFX + Corrección de Color e Imagen)",
+            "icon": "SiAdobeaftereffects"
+          }
+        ]
+      },
+      {
+        "titulo": "Ilustración y Comics",
+        "cards": [
+          {
+            "titulo": "Ilustración Artística/Digital: Iniciación",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (Ilustración Tradicional + Ilustración Digital con Photoshop)",
+            "recomendado": true,
+            "icon": "PiPaintBrushDuotone"
+          },
+          {
+            "titulo": "Ilustración de Autor: Exploración de Estilo y Narrativa Visual",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (Narrativa Visual + Técnicas Diversas + InDesign + Intervenciones Animadas)",
+            "recomendado": true,
+            "icon": "LuFileText"
+          },
+          {
+            "titulo": "Ilustración A/D: Anatomía Avanzada y Morfología Animal",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (Bellas Artes + Pintura con Photoshop + Taller de Anatomía Humana y de Criaturas Fantásticas)",
+            "recomendado": true,
+            "icon": "BsPersonWalking"
+          },
+          {
+            "titulo": "Comics: Realización Integral",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (Guión + Diseño de Personajes + Figura humana y expresión + Criaturas + Entintado artístico y digital)",
+            "recomendado": true,
+            "icon": "FaBookOpen"
+          },
+          {
+            "titulo": "Realización de Manga",
+            "type": "Curso Corto",
+            "descripcion": "36 horas (Técnicas tradicionales y digitales + Anatomía + Diseño de Página + Narrativa)",
+            "icon": "BiBookAlt"
+          }
+        ]
+      },
+      {
+        "titulo": "Fotografía",
+        "cards": [
+          {
+            "titulo": "Fotografía",
+            "type": "Curso de Formación Profesional",
+            "descripcion": "84 horas (Cámara + Lentes + Técnicas + Lightroom + Photoshop)",
+            "new": true,
+            "icon": "FaCamera"
+          }
+        ]
+      },
+      {
+        "titulo": "Para Docentes",
+        "cards": [
+          {
+            "titulo": "Tecnología Educativa para Docentes",
+            "type": "Curso Especial",
+            "descripcion": "84 horas (Photoshop + Illustrator + Powerpoint + Diseño Interactivo para Educación)",
+            "new": true,
+            "icon": "FaChalkboardTeacher"
+          }
+        ]
+      }
+    ],
+    "cursos3": [
+      {
+        "titulo": "Pre-Universitarios",
+        "cards": [
+          {
+            "titulo": "Realización de Videojuegos 3D",
+            "type": "Cursos para Jóvenes de 15 a 18 años",
+            "descripcion": "Unity + 3D Studio Max + Photoshop + Bolt + Game Design",
+            "icon": "LuGamepad2"
+          },
+          {
+            "titulo": "Realización de Videojuegos 2D",
+            "type": "Cursos para Jóvenes de 15 a 18 años",
+            "descripcion": "Construct 2 + Estética + Game Design + Recursos Online",
+            "icon": "BiGame"
+          }
+        ]
+      },
+      {
+        "titulo": "Academia Artística/Tecnológica",
+        "cards": [
+          {
+            "titulo": "Iniciación a la Ilustración Artística/Digital",
+            "type": "Cursos para Chicos de 9 a 12 años",
+            "descripcion": "Fundamentos + Técnicas Digitales y Tradicionales + Ejercicios Divertidos",
+            "icon": "SlPicture"
+          },
+          {
+            "titulo": "Iniciación a la Ilustración Artística/Digital",
+            "type": "Cursos para Jóvenes de 13 a 17 años",
+            "descripcion": "Fundamentos + Técnicas Digitales y Tradicionales + Ejercicios Divertidos",
+            "icon": "GrPaint"
+          },
+          {
+            "titulo": "Ilustración: Diseño de Personajes",
+            "type": "Cursos para Chicos de 10 a 13 años",
+            "descripcion": "Técnicas Digitales y Tradicionales + Anatomía + Monstruos y Criaturas",
+            "icon": "FaPerson"
+          }
+        ]
+      },
+      {
+        "titulo": "Cursos de Videojuegos para Chicos",
+        "cards": [
+          {
+            "titulo": "Realización de Videojuegos 2D",
+            "type": "Cursos para Chicos de 9 a 11 años",
+            "descripcion": "Construct 2 + Photoshop + Game Design",
+            "icon": "SiEpicgames"
+          },
+          {
+            "titulo": "Realización de Videojuegos 2D",
+            "type": "Cursos para Chicos de 12 a 14 años",
+            "descripcion": "Construct 2 + Photoshop + Game Design",
+            "icon": "SiRiotgames"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cursos Chicos y Adolecentes",
+    "slug": "chicos-y-adolecentes",
+    "heroSection": {
+      "backgroundImage": "/cursos-chicos/cursos_hero-web.webp",
+      "title": "Mejorá Tus Conocimientos o Incursioná en una Nueva Profesión",
+      "subtitle": "Cursos Online y Presenciales",
+      "instinctText": "Da Vinci. Un Universo Diferente."
+    },
+    "info": [
+      {
+        "title": "Pagos de hasta en 12 cuotas",
+        "description": "Con todas las tarjetas de crédito",
+        "buttonText": "contactanos"
+      },
+      {
+        "title": "10% de Descuento para Estudiantes",
+        "description": "De cualquier universidad argentina",
+        "buttonText": "Ver charla"
+      }
+    ],
+    "introduction": [
+      "Escuela Da Vinci ofrece una serie de Cursos para Chicos y Adolescentes en las ramas de Arte, Diseño y Tecnología, con el mismo staff y recursos de nuestros Cursos de Formación Profesional. Nos caracterizamos por programas innovadores y exclusivos, grupos limitados de trabajo, profesores expertos, infraestructura tecnológica de punta y un clima motivador de soporte mutuo.",
+      "Este es un listado de los cursos cortos disponibles en este momento, ordenados por orientación. Seleccioná el que más te interese y obtené más información."
+    ],
+    "cursos": [
+      {
+        "titulo": "Pre-Universitarios",
+        "cards": [
+          {
+            "titulo": "Realización de Videojuegos 3D",
+            "type": "Cursos para Jóvenes de 15 a 18 años",
+            "descripcion": "Unity + 3D Studio Max + Photoshop + Bolt + Game Design",
+            "icon": "LuGamepad2"
+          },
+          {
+            "titulo": "Realización de Videojuegos 2D",
+            "type": "Cursos para Jóvenes de 15 a 18 años",
+            "descripcion": "Construct 2 + Estética + Game Design + Recursos Online",
+            "icon": "BiGame"
+          }
+        ]
+      },
+      {
+        "titulo": "Academia Artística/Tecnológica",
+        "cards": [
+          {
+            "titulo": "Iniciación a la Ilustración Artística/Digital",
+            "type": "Cursos para Chicos de 9 a 12 años",
+            "descripcion": "Fundamentos + Técnicas Digitales y Tradicionales + Ejercicios Divertidos",
+            "icon": "SlPicture"
+          },
+          {
+            "titulo": "Iniciación a la Ilustración Artística/Digital",
+            "type": "Cursos para Jóvenes de 13 a 17 años",
+            "descripcion": "Fundamentos + Técnicas Digitales y Tradicionales + Ejercicios Divertidos",
+            "icon": "GrPaint"
+          },
+          {
+            "titulo": "Ilustración: Diseño de Personajes",
+            "type": "Cursos para Chicos de 10 a 13 años",
+            "descripcion": "Técnicas Digitales y Tradicionales + Anatomía + Monstruos y Criaturas",
+            "icon": "FaPerson"
+          },
+          {
+            "titulo": "Curso de Realización de Historietas",
+            "type": "Cursos para Jóvenes de 13 a 17 años",
+            "descripcion": "Técnicas de dibujo - Guión - Photoshop",
+            "icon": "FaBook"
+          }
+        ]
+      },
+      {
+        "titulo": "Cursos de Videojuegos para Chicos",
+        "cards": [
+          {
+            "titulo": "Realización de Videojuegos 2D",
+            "type": "Cursos para Chicos de 9 a 11 años",
+            "descripcion": "Construct 2 + Photoshop + Game Design",
+            "icon": "SiEpicgames"
+          },
+          {
+            "titulo": "Realización de Videojuegos 2D",
+            "type": "Cursos para Chicos de 12 a 14 años",
+            "descripcion": "Construct 2 + Photoshop + Game Design",
+            "icon": "SiRiotgames"
+          }
+        ]
       }
     ]
   }
