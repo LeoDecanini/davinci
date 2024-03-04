@@ -31,7 +31,7 @@ const Page = ({ params }: any) => {
       <Info data={info} />
       <Introduction introduction={introduction} />
       <Course1 cursos={cursos} />
-        {cursos2 && <Course2 course2={cursos2} />}
+        {cursos2 && <Course2 cursos2={cursos2} />}
         {cursos3 && <Course3 cursos3={cursos3} />}
     </>
   );

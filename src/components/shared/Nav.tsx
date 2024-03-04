@@ -38,9 +38,9 @@ const Nav = () => {
           url: "/carreras/programacion-de-videojuegos",
         },
         /*{ name: "CINE DE ANIMACIÓN Y POSPRODUCCIÓN", url: "/carreras/a" },
-                        { name: "DISEÑO Y PROGRAMACION WEB", url: "/carreras/a" },
-                        { name: "ANALISTA DE SISTEMAS", url: "/carreras/a" },
-                        { name: "PROXIMAMENTE: CINE Y NUEVOS FORMATOS", url: "/carreras/a" },*/
+                                { name: "DISEÑO Y PROGRAMACION WEB", url: "/carreras/a" },
+                                { name: "ANALISTA DE SISTEMAS", url: "/carreras/a" },
+                                { name: "PROXIMAMENTE: CINE Y NUEVOS FORMATOS", url: "/carreras/a" },*/
       ],
     },
     {
@@ -153,19 +153,6 @@ const Nav = () => {
                 EVENTOS
               </Link>
               {pathname.includes("/eventos") ? (
-                <div className="h-0.5 bg-primary group-hover:block"></div>
-              ) : (
-                <div className="h-0.5 bg-primary group-hover:block hidden"></div>
-              )}
-            </div>
-            <div className="h-full py-8 font-extrabold group">
-              <Link
-                className="text-base xl:text-lg text-white font-bold"
-                href={"/noticias"}
-              >
-                NOTICIAS
-              </Link>
-              {pathname.includes("/noticias") ? (
                 <div className="h-0.5 bg-primary group-hover:block"></div>
               ) : (
                 <div className="h-0.5 bg-primary group-hover:block hidden"></div>

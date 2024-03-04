@@ -1,0 +1,114 @@
+[
+  {
+    "name": "Por qué estudiar Diseño Gráfico Artístico Digital",
+    "slug": "por-que-estudiar-diseno-grafico-artistico-digital",
+    "imagen": "/eventos/fondo-evento-1.webp",
+    "info": {
+      "title": "Por qué estudiar Diseño Gráfico Artístico Digital",
+      "subtitle": "Charlas Orientativas: El Futuro del Empleo",
+      "text": [
+        "La comunicación visual es algo fundamental hoy día, y el mundo del diseño es un factor imprescindible en nuestra vida diaria. Conocé sus aspectos fundamentales y los trabajos que ofrece."
+      ],
+      "datos": {
+        "dia": "Martes 5 de Marzo",
+        "horaio": "18:30 horas",
+        "lugar": "Google Meet"
+      },
+      "inscripcion": [
+        "COMPLETÁ EL FORMULARIO DE ESTA MISMA PÁGINA. UNA VEZ RECIBIDO, TE ENVIAREMOS EL LINK E INSTRUCCIONES ACERCA DE CÓMO UNIRTE A LA CLASE.",
+        "¿Cómo es cursar la carrera de DISEÑO GRÁFICO ARTÍSTICO DIGITAL?",
+        "Asistí a nuestra CHARLA ORIENTATIVA ONLINE y conocé la carrera, su salida laboral y el método de cursada."
+      ],
+      "extra": {
+        "title": "Martes 5/3, 18:30 hs - Charla Orientativa de Diseño Gráfico",
+        "link": "Diseño Gráfico Artístico Digital",
+        "url": "/carreras/diseno-grafico",
+        "text": [
+          "aborda la comunicación visual que nos rodea a diario: desde libros, películas, series, campañas publicitarias, logos y packaging hasta el mundo online y digital con motion graphics, páginas web y aplicaciones. Además, el diseñador gráfico incorpora el uso de lo último en herramientas tecnológicas para terminar de desarrollar su propio lenguaje.",
+          "Las Charlas Informativas se dan a través de Meet, una app sencilla para encuentros grupales creada por Google."
+        ]
+      }
+    },
+    "cronograma": false
+  },
+  {
+    "name": "Serie de Masterclasses de Historieta",
+    "slug": "serie-de-masterclasses-de-historieta",
+    "imagen": "/eventos/fondo-evento-2.webp",
+    "info": {
+      "title": "Serie de Masterclasses de Historieta",
+      "subtitle": "4 clases que repasan los grandes géneros del cómic",
+      "text": [
+        "No te pierdas una serie de jornadas dedicadas al mundo de la viñeta y el diálogo. Terror, ciencia ficción y autobiografía serán ejes de las primeras clases, ¡y en la última habrá una votación para elegir el tema!"
+      ],
+      "datos": {
+        "dia": "Del 6 al 27 de Marzo",
+        "horaio": "18:30 horas",
+        "lugar": "Google Meet"
+      },
+      "extra": {
+        "title": "Invercion en el mundo del comic",
+        "link": "Diseño Gráfico Artístico Digital",
+        "url": "/carreras/diseno-grafico",
+        "text": [
+          "¿Preparados para ingresar al maravilloso mundo del cómic y sus principales géneros? En esta serie de clases, Matías De Vincenzo y Dolores Alcatena, profesores del Curso de Formación Profesional de Realización Integral de Cómics, indagarán en las variantes del terror, la ciencia ficción y la autobiografía.",
+          "No solo repasarán grandes autores y obras, sino que también explicarán la relación con otros lenguajes (como el cine y la literatura) y brindarán las claves para entender lo que brinda cada género.",
+          "Además, al término de la última clase, tendremos la charla informativa del Curso de Formación Profesional de Realización Integral de Cómics ¡y un SORTEO por una vacante para tomar el curso de forma gratuita!",
+          "¿Te lo vas a perder?"
+        ]
+      },
+      "cronograma": {
+        "img": "/eventos/imagen-cronograma-2.jpeg",
+        "datos": [
+          {
+            "title": "6/3: TERROR",
+            "text": "Repasamos tópicos, elementos y características de este clásico género. También visitaremos sus variantes como el horror, el gore o el suspenso. Y vamos a establecer puntos en común y diferencias entre cine, literatura y lenguaje de historieta. Autores a analizar: Thomas Ott, Dave McKean, Junji Ito y Salvador Sanz, entre otros."
+          },
+          {
+            "title": "13/3: CIENCIA FICCIÓN",
+            "text": "Un clásico de clásicos: veremos cómo la ciencia ficción sirve de excusa para hablar de temas y problemáticas profundas inherentes al ser humano y su convivencia con el universo. Obras a analizar: Akira (Katsuhiro Otomo), Sweeth tooth (Jeff Lemire) y El último recreo (Carlos Trillo y Horacio Altuna)."
+          },
+          {
+            "title": "20/3: AUTOBIOGRAFÍA",
+            "text": "La autiobiografía ya es un género típico de los últimos años y de las redes sociales. Se trata de un espacio para la catarsis personal y la identificación del lector con las vivencias ajenas, y también un compendio de vivencias y situaciones ficcionalizadas. Autores a analizar: Soledad Otero, Juan Sáenz Valiente y Julia Inés Mamone (Femimutancia)."
+          },
+          {
+            "title": "27/3: MASTERCLASS A ELECCIÓN (SUPERHÉROES, SEINEN o NOIR)",
+            "text": "Tres géneros, una votación. ¡Sí! En esta clase, vos vas a elegir qué analizarán los docentes. Podrás votar en la encuesta de nuestra cuenta de Instagram (PRÓXIMAMENTE, EL LINK)."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "El Terror en los Cómics: El Miedo al Silencio",
+    "slug": "el-terror-en-los-comics",
+    "imagen": "/eventos/fondo-evento-3.webp",
+    "info": {
+      "title": "El Terror en los Cómics: El Miedo al Silencio",
+      "subtitle": "Masterclass Online y Gratuita de Realización de Cómics",
+      "text": [
+        "Veremos elementos y características de este un género que siempre nos atrapa."
+      ],
+      "datos": {
+        "dia": "Miercoles 6 de Marzo",
+        "horaio": "19:00 horas",
+        "lugar": "Google Meet"
+      },
+      "inscripcion": [
+        "COMPLETÁ EL FORMULARIO DE ESTA MISMA PÁGINA. UNA VEZ RECIBIDO, TE ENVIAREMOS EL LINK E INSTRUCCIONES ACERCA DE CÓMO UNIRTE A LA CLASE.",
+        "¿Cómo es cursar la carrera de DISEÑO GRÁFICO ARTÍSTICO DIGITAL?",
+        "Asistí a nuestra CHARLA ORIENTATIVA ONLINE y conocé la carrera, su salida laboral y el método de cursada."
+      ],
+      "cronograma": {
+        "img": "/eventos/imagen-cronograma-3.webp",
+        "datos": [
+          {
+            "title": " 19 Hs - CLASE ABIERTA: EL TERROR EN LOS CÓMICS",
+            "text": "¿Listos para entrar a un mundo que contiene todos nuestros miedos? Junto a Matías De Vincenzo y Dolores Alcatena, docentes del Curso de Formación Profesional de Realización Integral de Cómics, vamos a repasar tópicos, elementos y características de este clásico género. También visitaremos sus variantes como el horror, el gore o el suspenso. Estableceremos los puntos en común y las diferencias entre cine, literatura y lenguaje de historieta: la ausencia de sonido, el factor sorpresa, la construcción de climas, los screamers, el movimiento de cámara y más."
+          }
+        ]
+      }
+    }
+  }
+]
