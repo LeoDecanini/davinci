@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
-import HeroSection from "@/components/shared/HeroSection";
-import Introduction from "@/components/cursos/Introduction";
+import HeroSection from "@/components/users/shared/HeroSection";
+import Introduction from "@/components/users/cursos/Introduction";
 import {
   Pagination,
   PaginationContent,

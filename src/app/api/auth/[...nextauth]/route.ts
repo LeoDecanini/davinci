@@ -1,7 +1,7 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { connectDB } from "@/lib/mongoose";
-import user from "@/models/users";
+import User from "@/models/users";
 import bcrypt from "bcryptjs";
 
 const handler = NextAuth({
@@ -9,29 +9,32 @@ const handler = NextAuth({
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        email: {
-          label: "email",
-          type: "email",
-          placeholder: "user@example.com",
+        dni: {
+          label: "DNI",
+          type: "text",
+          placeholder: "Ingresa tu dni",
         },
-        password: { label: "Password", type: "password" },
+        password: { label: "Contraseña", type: "password" },
       },
       async authorize(credentials, req) {
         await connectDB();
 
         console.log(credentials);
 
-        const userFound = await user.findOne({ email: credentials?.email }).select("+password")
-        if (!userFound) throw Error("Invalid credentials");
+        const userFound = await User.findOne({ dni: credentials?.dni }).select(
+          "+password",
+        );
+        if (!userFound) throw Error("Credenciales inválidas");
 
         const passwordMatch = await bcrypt.compare(
           credentials!.password,
-          userFound?.password
+          userFound?.password,
         );
 
-        if (!passwordMatch) throw Error("Invalid credentials");
+        if (!passwordMatch) throw Error("Credenciales inválidas");
 
-        console.log(userFound);
+        userFound.password = undefined;
+        console.log("userFound", userFound);
 
         return userFound;
       },
@@ -48,8 +51,8 @@ const handler = NextAuth({
     },
   },
   pages: {
-    signIn: "/signin"
-  }
+    signIn: "/signin",
+  },
 });
 
 export { handler as GET, handler as POST };

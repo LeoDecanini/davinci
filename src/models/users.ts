@@ -1,21 +1,42 @@
 import { Schema, model, models } from "mongoose";
+import z from "zod";
 
 const userSchema = new Schema({
+  name: {
+    type: String,
+    required: [true, "El nombre es obligatorio"],
+    minlength: [2, "El nombre debe tener al menos 2 caracteres"],
+    maxlength: [50, "El nombre no debe tener más de 50 caracteres"],
+  },
+  lastname: {
+    type: String,
+    required: [true, "El apellido es obligatorio"],
+    minlength: [2, "El apellido debe tener al menos 2 caracteres"],
+    maxlength: [50, "El apellido no debe tener más de 50 caracteres"],
+  },
   email: {
     type: String,
-    required: [true, "Email is required"],
+    required: [true, "El correo electrónico es obligatorio"],
     unique: true,
-    match: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Email is not valid"],
+    match: [
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+      "El correo electrónico no es válido",
+    ],
   },
   password: {
     type: String,
-    required: [true, "Password is required"],
-    selected: false,
-    minLength: [6, "Password must be at least 6 characters long"],
+    required: [true, "La contraseña es obligatoria"],
+    minlength: [6, "La contraseña debe tener al menos 6 caracteres"],
+    select: false,
   },
-  fullname: {
+  role: {
     type: String,
-    required: [true, "Fullname is required"],
+    enum: ["alumno", "profesor", "secretario", "administrador"],
+    required: [true, "El rol es obligatorio"],
+  },
+  dni: {
+    type: String,
+    minlength: [8, "El DNI debe tener al menos 11 caracteres"],
   },
 });
 

@@ -1,15 +1,15 @@
 import React from "react";
-import Info from "@/components/Home/Info";
-import Events from "@/components/Home/Events";
-import News from "@/components/Home/News";
-import Stats from "@/components/Home/Stats";
-import InfoStats from "@/components/Home/InfoStats";
-import ExplorePage from "@/components/Home/ExplorePage";
-import Inscriptions from "@/components/Home/Inscriptions";
-import About1 from "@/components/Home/About1";
-import Sponsors from "@/components/Home/Sponsors";
-import SponsorsList from "@/components/Home/SponsorsList";
-import HeroSection from "@/components/shared/HeroSection";
+import Info from "@/components/users/Home/Info";
+import Events from "@/components/users/Home/Events";
+import News from "@/components/users/Home/News";
+import Stats from "@/components/users/Home/Stats";
+import InfoStats from "@/components/users/Home/InfoStats";
+import ExplorePage from "@/components/users/Home/ExplorePage";
+import Inscriptions from "@/components/users/Home/Inscriptions";
+import About1 from "@/components/users/Home/About1";
+import Sponsors from "@/components/users/Home/Sponsors";
+import SponsorsList from "@/components/users/Home/SponsorsList";
+import HeroSection from "@/components/users/shared/HeroSection";
 
 const Home = () => {
   return (

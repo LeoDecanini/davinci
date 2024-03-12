@@ -1,12 +1,12 @@
 import React from "react";
 import cursosData from "@/models/cursosData.json";
-import HeroSection from "@/components/shared/HeroSection";
-import Info from "@/components/Carreras/info";
-import IconList from "@/components/cursos/IconList";
-import Introduction from "@/components/cursos/Introduction";
-import Course1 from "@/components/cursos/Course1";
-import Course2 from "@/components/cursos/Course2";
-import Course3 from "@/components/cursos/Course3";
+import HeroSection from "@/components/users/shared/HeroSection";
+import Info from "@/components/users/Carreras/info";
+import IconList from "@/components/users/cursos/IconList";
+import Introduction from "@/components/users/cursos/Introduction";
+import Course1 from "@/components/users/cursos/Course1";
+import Course2 from "@/components/users/cursos/Course2";
+import Course3 from "@/components/users/cursos/Course3";
 
 interface Card {
   icon: string;

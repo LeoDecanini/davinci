@@ -4,7 +4,7 @@ import { FaRegClock } from "react-icons/fa";
 import { BsCalendarDate } from "react-icons/bs";
 import { RiMapPin2Line } from "react-icons/ri";
 import Link from "next/link";
-import Inscripcion from "@/components/eventos/Inscripcion";
+import Inscripcion from "@/components/users/eventos/Inscripcion";
 
 const Page = ({ params }: any) => {
   const slug = params.slug;
@@ -17,7 +17,7 @@ const Page = ({ params }: any) => {
   return (
     <>
       <img
-        className={"h-[80svh] object-cover w-full h-full"}
+        className={"h-[80svh] object-cover w-full h-full mt-[94px]"}
         src={imagen}
         alt="evento 1"
       />

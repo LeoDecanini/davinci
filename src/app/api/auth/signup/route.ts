@@ -1,59 +1,103 @@
-import {NextResponse} from "next/server";
+import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import User from "@/models/users";
-import {connectDB} from "@/lib/mongoose";
+import { connectDB } from "@/lib/mongoose";
+
+interface UserData {
+  [key: string]: string;
+}
+
+interface GroupedUsers {
+  [key: number]: UserData;
+}
 
 export async function POST(request: Request) {
-    const {fullname, email, password} = await request.json();
+  const requestData = await request.json();
+  const usersData: GroupedUsers = {};
 
-    if (!password || password.length < 6) {
+  for (const key in requestData) {
+    const match = key.match(/^(\D+)(\d+)$/);
+    if (match) {
+      const fieldName = match[1];
+      const userIndex = parseInt(match[2]);
+      if (!usersData[userIndex]) {
+        usersData[userIndex] = {};
+      }
+      usersData[userIndex][fieldName] = requestData[key];
+    } else {
+      if (!usersData[1]) {
+        usersData[1] = {};
+      }
+      usersData[1][key] = requestData[key];
+    }
+  }
+
+  console.log("Datos de usuarios agrupados:", usersData);
+
+  try {
+    await connectDB();
+
+    let hasIncompleteUser = false;
+
+    for (const userIndex in usersData) {
+      const userData = usersData[userIndex];
+      if (Object.values(userData).some((value) => !value)) {
+        hasIncompleteUser = true;
+        break;
+      }
+    }
+
+    if (hasIncompleteUser) {
+      return NextResponse.json(
+          { message: "Al menos un usuario tiene campos faltantes" },
+          { status: 400 }
+      );
+    }
+
+    const savedUsers = [];
+
+    for (const userIndex in usersData) {
+      const userData = usersData[userIndex];
+      const { name, lastname, email, role, dni } = userData;
+
+      const existingUserWithEmail = await User.findOne({ email });
+      if (existingUserWithEmail) {
         return NextResponse.json(
-            {message: "Password must be at least 6 characters"},
-            {status: 400}
+            { message: `El email ${email} ya está en uso` },
+            { status: 409 }
         );
-    }
+      }
 
-    if (!fullname) {
+      const existingUserWithDNI = await User.findOne({ dni });
+      if (existingUserWithDNI) {
         return NextResponse.json(
-            {message: "Fullname is required"},
-            {status: 400}
+            { message: `El DNI ${dni} ya está en uso` },
+            { status: 409 }
         );
+      }
+
+      const password = await bcrypt.hash(dni, 10);
+
+      const newUser = new User({
+        name,
+        lastname,
+        email,
+        password,
+        role,
+        dni,
+      });
+
+      const savedUser = await newUser.save();
+      savedUsers.push(savedUser);
     }
 
-    if (!email) {
-        return NextResponse.json(
-            {message: "Email is required"},
-            {status: 400}
-        );
+    console.log("Usuarios guardados:", savedUsers);
+
+    return NextResponse.json(savedUsers);
+  } catch (error) {
+    console.log("Error al procesar la solicitud:", error);
+    if (error instanceof Error) {
+      return NextResponse.json({ message: error.message }, { status: 500 });
     }
-
-    console.log(fullname, email, password);
-
-    try {
-        await connectDB();
-
-        const userFound = await User.findOne({email});
-
-        if (userFound) {
-            return NextResponse.json(
-                {message: "Email already exists"},
-                {status: 409}
-            );
-        }
-
-        const hashedPassword = await bcrypt.hash(password, 10);
-
-        const newUser = new User({fullname, email, password: hashedPassword});
-
-        const savedUser = await newUser.save();
-
-        console.log(savedUser);
-
-        return NextResponse.json(savedUser);
-    } catch (error) {
-        console.log(error);
-        if (error instanceof Error) {
-            return NextResponse.json({message: error.message}, {status: 500});
-        }
-    }
+  }
 }

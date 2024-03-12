@@ -3,17 +3,14 @@ import React, { useState, useEffect } from "react";
 import { FaRegMessage } from "react-icons/fa6";
 import { IoCaretDownOutline } from "react-icons/io5";
 import Link from "next/link";
-import MovileMenu from "@/components/shared/MovileMenu";
+import MovileMenu from "@/components/users/shared/MovileMenu";
 import { usePathname } from "next/navigation";
 
 const Nav = () => {
   const [hover3, setHover3] = useState(false);
-  const [isNavFixed, setIsNavFixed] = useState(false);
   const [hoverStates, setHoverStates] = useState([false, false, false]);
-  const [navHeight, setNavHeight] = useState(0);
 
   const pathname = usePathname();
-  console.log(pathname);
 
   const handleHover = (index: number) => {
     const newHoverStates = [...hoverStates];
@@ -57,43 +54,14 @@ const Nav = () => {
     {
       title: "ESCUELA",
       links: [
-        { name: "INSTALACIONES", url: "/escuela/a" },
-        { name: "INSERCIÓN LABORAL", url: "/escuela/a" },
-        { name: "TITULOS Y LICENCIATURAS", url: "/escuela/a" },
-        { name: "QUE ES DA VINCI", url: "/escuela/a" },
-        { name: "FUTUROS ALUMNOS", url: "/escuela/a" },
-        { name: "DV.TV", url: "/escuela/a" },
-        { name: "INTRANET", url: "/escuela/a" },
-        { name: "CAMPUS A DISTANCIA", url: "/escuela/a" },
+        { name: "INTRANET", url: "/signin" },
       ],
     },
   ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const offset = window.scrollY;
-      if (offset > 0) {
-        setIsNavFixed(true);
-      } else {
-        setIsNavFixed(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const navElement = document.querySelector("nav");
-    if (navElement) {
-      setNavHeight(navElement.clientHeight);
-    }
-  }, []);
-
   return (
     <>
-      {isNavFixed && <div style={{ height: navHeight }}></div>}
-      <nav className={`flex w-full h-[94px] ${isNavFixed ? "fixed-nav" : ""}`}>
+      <nav className={`flex w-full h-[94px] fixed-nav`}>
         <div className="bg-[#161616] min-[375px]:px-4 px-2 md:px-10 py-6 lg:py-0 flex justify-center lg:justify-between items-center w-full">
           <MovileMenu />
 

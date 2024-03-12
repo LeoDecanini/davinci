@@ -9,7 +9,7 @@ function HeroSection({
 }: any) {
   return (
     <section
-      className="h-[calc(100vh-94px)] bg-cover bg-center relative"
+      className="h-[calc(100vh-94px)] mt-[94px] bg-cover bg-center relative"
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundRepeat: "no-repeat",

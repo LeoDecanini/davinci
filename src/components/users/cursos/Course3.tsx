@@ -1,5 +1,5 @@
 import React from "react";
-import IconList from "@/components/cursos/IconList";
+import IconList from "@/components/users/cursos/IconList";
 
 const Course3 = ({ cursos3 }: any) => {
   return (

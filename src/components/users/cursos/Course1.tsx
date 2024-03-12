@@ -1,13 +1,13 @@
 import React from "react";
-import IconList from "@/components/cursos/IconList";
+import IconList from "@/components/users/cursos/IconList";
 
-const Course2 = ({ cursos2 }: any) => {
+const Course1 = ({ cursos }: any) => {
   return (
-    <section className="flex min-h-screen relative bg-[url('/fondo-orgullo.webp')] bg-no-repeat bg-cover bg-top px-2 sm:px-5 md:px-10 py-10 justify-center">
+    <section className="flex min-h-screen relative bg-[url('/fondo-orgullo.webp')] bg-no-repeat bg-cover bg-center px-2 sm:px-5 md:px-10 py-10 justify-center">
       <div className="absolute inset-0 bg-black opacity-10"></div>
 
       <div className="max-w-7xl w-full relative">
-        {cursos2.map((curso: any, i: any) => (
+        {cursos.map((curso: any, i: any) => (
           <div key={i} className={`${i > 0 && "pt-20"}`}>
             <div>
               <div>
@@ -22,22 +22,16 @@ const Course2 = ({ cursos2 }: any) => {
                     key={i}
                     className="shadow-xl cursor-pointer hover:shadow-2xl relative z-10"
                   >
-                    {curso.titulo === "Edición de Video y Cine Digital" && (
-                      <div className={`w-full h-1 bg-blue-700`}></div>
+                    {curso.titulo === "Diseño Gráfico" && (
+                      <div className={`w-full h-1 bg-violet-700`}></div>
                     )}
 
-                    {curso.titulo === "Ilustración y Comics" && (
-                      <div className={`w-full h-1 bg-violet-400`}></div>
+                    {curso.titulo === "Marketing Digital y Desarrollo Web" && (
+                      <div className={`w-full h-1 bg-cyan-400`}></div>
                     )}
 
                     {curso.titulo === "Videojuegos y Arte 3D" && (
                       <div className={`w-full h-1 bg-red-500`}></div>
-                    )}
-                    {curso.titulo === "Fotografía" && (
-                      <div className={`w-full h-1 bg-yellow-400`}></div>
-                    )}
-                    {curso.titulo === "Para Docentes" && (
-                      <div className="w-full h-1 bg-yellow-900"></div>
                     )}
 
                     <div className="bg-white min-h-[188px] h-full p-5 flex flex-col sm:flex-row items-center gap-3 justify-between">
@@ -55,9 +49,6 @@ const Course2 = ({ cursos2 }: any) => {
                             Curso Recomendado
                           </span>
                         )}
-                        {card.new && (
-                          <span className={"p-1 bg-primary"}>Curso Nuevo</span>
-                        )}
                       </div>
                     </div>
                   </div>
@@ -71,4 +62,4 @@ const Course2 = ({ cursos2 }: any) => {
   );
 };
 
-export default Course2;
+export default Course1;

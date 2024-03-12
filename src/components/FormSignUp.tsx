@@ -1,5 +1,5 @@
 "use client";
-import React, { FormEvent, useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import axios, { AxiosError } from "axios";
 import { signIn } from "next-auth/react";
@@ -7,8 +7,6 @@ import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -24,128 +22,244 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
 const formSchema = z.object({
-  fullname: z
+  name: z
     .string()
     .min(2, {
-      message: "El nombre debe tener como minimo 2 caracteres",
+      message: "El nombre debe tener como mínimo 2 caracteres",
     })
     .max(50, {
-      message: "El nombre debe tener como maximo 50 caracteres",
+      message: "El nombre debe tener como máximo 50 caracteres",
+    }),
+  lastname: z
+    .string()
+    .min(2, {
+      message: "El apellido debe tener como mínimo 2 caracteres",
+    })
+    .max(50, {
+      message: "El nombre debe tener como máximo 50 caracteres",
     }),
   email: z.string().email({
-    message: "El email no es valido",
+    message: "El email no es válido",
   }),
-  password: z.string().min(6, {
-    message: "La contraseña debe tener como minimo 6 caracteres.",
+  role: z.enum(["alumno", "profesor", "secretario", "administrador"]),
+  dni: z.string().min(8, {
+    message: "El dni debe tener como mínimo 8 números",
   }),
 });
 
+type Role = "alumno" | "profesor" | "secretario" | "administrador";
+
 type InputFieldType = {
-  fullname: string;
+  name: string;
+  lastname: string;
   email: string;
-  password: string;
+  role: Role;
+  dni: number;
 };
 
-const FormSignUp = () => {
+const FormSignUp = ({ numeroAlumnos }: any) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      fullname: "",
+      name: "",
+      lastname: "",
       email: "",
-      password: "",
+      role: "alumno",
+      dni: "",
     },
-  });
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<InputFieldType>({
-    resolver: zodResolver(formSchema),
   });
 
   const router = useRouter();
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+  async function onSubmit() {
     try {
-      const signupResponse = await axios.post("/api/auth/signup", {
-        email: values.email,
-        password: values.password,
-        fullname: values.fullname,
-      });
+      const values = form.getValues();
+      console.log(values);
 
-      const res = await signIn("credentials", {
-        email: values.email,
-        password: values.password,
-        redirect: false,
-      });
-
-      if (res?.ok) return router.push("/protected/home")
+      const signupResponse = await axios.post("/api/auth/signup", values);
 
       console.log(signupResponse);
-      toast.success("Usuario creado correctamente");
+      toast.success("Usuario/s creado/s correctamente");
     } catch (error) {
       if (error instanceof AxiosError) {
-        console.log(error.response?.data.error);
-
-        if (error.response?.data.error === "El usuario ya existe") {
-          toast.error("El usuario ya existe");
-        } else {
-          toast.error("Error desconosido al crear usuario");
-        }
+        console.log(error);
+        toast.error(`${error.response?.data.message}`);
       }
     }
   }
 
   const fields = [
-    { name: "fullname", label: "Nombre", colSpan: "col-span-1", type: "text" },
-    { name: "email", label: "Email", colSpan: "col-span-1", type: "text" },
-    {
-      name: "password",
-      label: "contraseña",
-      colSpan: "col-span-2",
-      type: "password",
-    },
+    [
+      {
+        name: "name",
+        placeholder: "Nombre 1",
+        label: "Nombre",
+        colSpan: "col-span-1",
+        type: "text",
+      },
+      {
+        name: "lastname",
+        placeholder: "Apellido 1",
+        label: "Apellido",
+        colSpan: "col-span-1",
+        type: "text",
+      },
+      {
+        name: "email",
+        placeholder: "Email 1",
+        label: "Email",
+        colSpan: "col-span-1",
+        type: "text",
+      },
+      {
+        name: "role",
+        placeholder: "Rol 1",
+        label: "Rol",
+        colSpan: "col-span-1",
+        type: "select",
+        options: ["alumno", "profesor", "secretario", "administrador"],
+      },
+      {
+        name: "dni",
+        placeholder: "DNI 1",
+        label: "DNI",
+        colSpan: "col-span-1",
+        type: "number",
+      },
+    ],
   ];
+
+  for (let i = 2; i <= numeroAlumnos; i++) {
+    fields.push([
+      {
+        name: `name${i}`,
+        placeholder: `Nombre ${i}`,
+        label: `Nombre`,
+        colSpan: "col-span-1",
+        type: "text",
+      },
+      {
+        name: `lastname${i}`,
+        placeholder: `Apellido ${i}`,
+        label: `Apellido`,
+        colSpan: "col-span-1",
+        type: "text",
+      },
+      {
+        name: `email${i}`,
+        placeholder: `Email ${i}`,
+        label: `Email`,
+        colSpan: "col-span-1",
+        type: "text",
+      },
+      {
+        name: `role${i}`,
+        placeholder: `Rol ${i}`,
+        label: `Rol`,
+        colSpan: "col-span-1",
+        type: "select",
+        options: ["alumno", "profesor", "secretario", "administrador"],
+      },
+      {
+        name: `dni${i}`,
+        placeholder: `DNI ${i}`,
+        label: `DNI`,
+        colSpan: "col-span-1",
+        type: "number",
+      },
+    ]);
+  }
+
+  /*console.log(fields);*/
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="pt-8">
-        <div className="w-full grid gap-y-2 gap-x-4 grid-cols-2 py-4">
-          {fields.map((fieldInfo: any) => (
-            <div key={fieldInfo.name} className={`${fieldInfo.colSpan}`}>
-              <div className="w-full">
-                <FormField
-                  control={form.control}
-                  name={fieldInfo.name as any}
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel
-                        className="text-lg font-bold"
-                        htmlFor={fieldInfo.name}
-                      >
-                        {fieldInfo.label}
-                      </FormLabel>
-                      <FormControl>
-                        <Input
-                          className="py-6 bg-gray-50 focus-visible:outline-blue-700 focus-visible:ring-0 ring-offset-blue-700"
-                          id={fieldInfo.name}
-                          type={fieldInfo.type}
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="pt-4">
+        <div className="w-full py-4">
+          {fields.map((row, rowIndex) => (
+            <div
+              key={rowIndex}
+              className={`grid gap-y-3 gap-x-2 grid-cols-5 w-full ${
+                rowIndex > 0 ? "pt-5" : ""
+              }`}
+            >
+              {row.map((fieldInfo, colIndex) => (
+                <div key={colIndex} className={`${fieldInfo.colSpan}`}>
+                  <div className="w-full">
+                    <FormField
+                      control={form.control}
+                      name={fieldInfo.name as any}
+                      render={({ field }) => (
+                        <FormItem>
+                          {colIndex < 5 && (
+                            <div className="bg-secondary py-2 px-3">
+                              <FormLabel
+                                className="text-lg font-bold text-white"
+                                htmlFor={fieldInfo.name}
+                              >
+                                {fieldInfo.label} {` - ${rowIndex + 1}`}
+                              </FormLabel>
+                            </div>
+                          )}
+                          <FormControl>
+                            {fieldInfo.type === "select" &&
+                            fieldInfo.options ? (
+                              <Select
+                                onValueChange={(selectedRole) => {
+                                  form.setValue(
+                                    fieldInfo.name as any,
+                                    selectedRole,
+                                  );
+                                  console.log(selectedRole);
+                                }}
+                              >
+                                <SelectTrigger className="py-6 bg-gray-50 ">
+                                  <SelectValue />
+                                </SelectTrigger>
+                                <SelectContent>
+                                  {fieldInfo.options?.map(
+                                    (option: string, i: any) => (
+                                      <SelectItem key={option} value={option}>
+                                        {option}
+                                      </SelectItem>
+                                    ),
+                                  )}
+                                </SelectContent>
+                              </Select>
+                            ) : (
+                              <Input
+                                className="py-6 bg-gray-50"
+                                id={fieldInfo.name}
+                                type={fieldInfo.type}
+                                placeholder={fieldInfo.placeholder}
+                                {...field}
+                              />
+                            )}
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
           ))}
         </div>
-        <div className="pt-8 w-full flex sm:justify-start justify-center">
-          <Button type="submit" className="py-6 px-10 bg-blue-700">
+        <div className="pt-4 w-full flex sm:justify-start justify-center">
+          <Button
+            type="submit"
+            className="py-6 px-10 hover:bg-[#b30c67] bg-secondary"
+          >
             Registrarse
           </Button>
         </div>

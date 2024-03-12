@@ -21,8 +21,8 @@ import {
 } from "@/components/ui/form";
 
 const formSchema = z.object({
-  email: z.string().email({
-    message: "El email no es valido",
+  dni: z.string().min(8, {
+    message: "La Contraseña debe tener como minimo 6 caracteres.",
   }),
   password: z.string().min(6, {
     message: "La Contraseña debe tener como minimo 6 caracteres.",
@@ -30,7 +30,7 @@ const formSchema = z.object({
 });
 
 type InputFieldType = {
-  email: string;
+  dni: string;
   password: string;
 };
 
@@ -38,7 +38,7 @@ const FormSignIp = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      email: "",
+      dni: "",
       password: "",
     },
   });
@@ -55,24 +55,24 @@ const FormSignIp = () => {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
-    const { email, password } = values;
+    const { dni, password } = values;
 
     const res = await signIn("credentials", {
-      email,
+      dni,
       password,
       redirect: false,
     });
 
-    if (res?.error) {
-      console.log(res?.error);
-      return toast.success("El email o la contraseña no son validas.");
-    }
+      if (res?.error) {
+        console.log(res?.error);
+        return toast.success("El dni o la contraseña no son validas.");
+      }
 
-    if (res?.ok) return router.push("/protected/home")
+    if (res?.ok) return router.push("/protected")
   }
 
   const fields = [
-    { name: "email", label: "Email", colSpan: "col-span-2", type: "email" },
+    { name: "dni", label: "DNI", colSpan: "col-span-2", type: "text" },
     {
       name: "password",
       label: "password",
@@ -83,7 +83,7 @@ const FormSignIp = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="pt-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="pt-4">
         <div className="w-full grid gap-y-2 gap-x-4 grid-cols-2 py-4">
           {fields.map((fieldInfo: any) => (
             <div key={fieldInfo.name} className={`${fieldInfo.colSpan}`}>
@@ -101,7 +101,7 @@ const FormSignIp = () => {
                       </FormLabel>
                       <FormControl className="!w-full">
                         <Input
-                          className="py-6 !w-full bg-gray-50 focus-visible:outline-blue-700 focus-visible:ring-0 ring-offset-blue-700"
+                          className="py-6 !w-full bg-gray-50"
                           id={fieldInfo.name}
                           type={fieldInfo.type}
                           {...field}
@@ -116,7 +116,7 @@ const FormSignIp = () => {
           ))}
         </div>
         <div className="pt-8 w-full flex sm:justify-start justify-center">
-          <Button type="submit" className="py-6 px-10 bg-blue-700">
+          <Button type="submit" className="py-6 px-10 hover:bg-[#b30c67] bg-secondary">
             Login
           </Button>
         </div>

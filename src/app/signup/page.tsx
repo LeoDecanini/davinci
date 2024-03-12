@@ -1,61 +1,57 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { FcGoogle } from "react-icons/fc";
-import { FaFacebookF } from "react-icons/fa6";
-import Link from "next/link";
+import { Input } from "@/components/ui/input";
 import FormSignUp from "@/components/FormSignUp";
 
 const IniciarSesion = () => {
+  const [numeroAlumnos, setNumeroAlumnos] = useState<number>(1);
+  const [tempNumeroAlumnos, setTempNumeroAlumnos] = useState<number>(1);
+
+  const handleAgregarClick = () => {
+    if (tempNumeroAlumnos === 0) {
+      console.log("Se tiene que setear un número antes");
+    } else {
+      setNumeroAlumnos(prevNumeroAlumnos => prevNumeroAlumnos + tempNumeroAlumnos);
+      console.log("Número de alumnos a agregar:", tempNumeroAlumnos);
+    }
+  };
+
+  const handleResetClick = () => {
+    setNumeroAlumnos(1);
+    setTempNumeroAlumnos(0);
+  };
+
   return (
-    <section className="py-3 sm:block sm:py-0 h-screen flex justify-center w-full px-4 sm:px-4 xs:px-10 md:px-10 lg:px-14 xl:px-18 2xl:px-20">
-      <div className=" h-full w-full flex flex-col lg:flex-row gap-10">
-        <div className="h-full w-full npx shadcn-ui@latest add input flex flex-col justify-center">
-          <h1 className="text-4xl pb-8 sm:pb-0 sm:text-6xl text-gray-800 font-bold">
-            Registrate
-          </h1>
-          <p className="sm:block hidden text-md sm:max-w-[90%] font-medium text-gray-700 sm:text-lg pt-4">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis
-            minima molestiae ipsa.
-          </p>
-          <div className="hidden sm:flex py-8  items-center gap-5">
-            <h2 className="text-blue-700 font-bold text-2xl">Registrate con</h2>
-            <div className="border hidden sm:block border-blue-700 w-20"></div>
-          </div>
-          <div className="flex items-center gap-5 justify-center">
-            <Button
-              className="w-full py-6 flex items-center gap-3 "
-              variant="outline"
-              disabled
-            >
-              <FcGoogle className="text-xl" />
-              <span className="hidden sm:block">Registrate con Google</span>
-            </Button>
-            <Button
-              className="w-full py-6 flex items-center gap-3 "
-              variant="outline"
-              disabled
-            >
-              <FaFacebookF className="text-xl text-blue-800" />
-              <span className="hidden sm:block">Registrate con Facebook</span>
-            </Button>
-          </div>
+      <section className="py-3 sm:block sm:py-0 min-h-[calc(100vh-94px)] mt-[94px] flex justify-center w-full px-4 sm:px-4 xs:px-10 md:px-10 lg:px-14 xl:px-18 2xl:px-20">
+        <div className=" h-full w-full flex flex-col lg:flex-row gap-10">
+          <div className="h-full w-full py-10">
+            <div className={"flex items-center justify-between w-full"}>
+              <h1 className="text-4xl w-full pb-8 sm:pb-0 sm:text-6xl text-gray-800 font-bold">
+                Registro de usuarios
+              </h1>
 
-          <FormSignUp />
-
-          <div className="pt-5 text-center sm:text-left">
-            <span className="text-gray-600 text-xs sm:text-base">
-              Si ya cuentas con una contraseña -{" "}
-              <Link href={"/"} className="text-blue-700 font-bold">
-                Inicia sesion
-              </Link>
-            </span>
+              <div className={"flex justify-end items-center gap-4 w-full"}>
+                <Input
+                    className={"w-1/2"}
+                    type="number"
+                    placeholder="Numero de alumnos a agregar"
+                    value={tempNumeroAlumnos === 0 ? "" : tempNumeroAlumnos}
+                    onChange={(e) => setTempNumeroAlumnos(parseInt(e.target.value))}
+                />
+                <Button
+                    className="py-6 px-10 hover:bg-[#b30c67] bg-secondary"
+                    onClick={handleAgregarClick}
+                >
+                  Agregar
+                </Button>
+                <Button className="py-6 px-5 hover:bg-[#b30c67] bg-secondary" onClick={handleResetClick}>Restablecer a 1</Button>
+              </div>
+            </div>
+            <FormSignUp numeroAlumnos={numeroAlumnos} setNumeroAlumnos={setNumeroAlumnos} />
           </div>
         </div>
-        <div className="h-full w-full hidden lg:flex justify-center items-center">
-          <img src="/iniciosesion.png" alt="" />
-        </div>
-      </div>
-    </section>
+      </section>
   );
 };
 
