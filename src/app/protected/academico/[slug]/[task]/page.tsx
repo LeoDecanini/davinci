@@ -119,7 +119,7 @@ const Page = () => {
           </div>
           <div className={"w-full col-span-1"}>
             {user && user.role === "alumno" && <UserView />}
-            {user && user.role === "profesor" && <TeacherView />}
+            {user && user.role !== "alumno" && <TeacherView />}
           </div>
         </div>
       </div>

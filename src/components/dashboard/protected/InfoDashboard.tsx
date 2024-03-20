@@ -55,29 +55,57 @@ const InfoDashboard = () => {
 
       <div className={"pt-10"}>
         {user && user.role === "alumno" && (
-          <h4 className={"text-xl font-semibold pb-3"}>Materias inscriptas</h4>
+          <>
+            <h4 className={"text-xl font-semibold pb-3"}>
+              Materias inscriptas
+            </h4>
+            <div>
+              <div className={"w-full flex flex-col gap-4 h-[200px]"}>
+                {paragraphs.map((paragraph, i) => (
+                  <div
+                    key={i}
+                    className="shadow-xl cursor-pointer hover:shadow-2xl relative z-10"
+                  >
+                    <div
+                      className="w-full h-1"
+                      style={{ backgroundColor: paragraph.color }}
+                    ></div>
+                    <div className="bg-white h-full p-3 flex flex-col sm:flex-row items-center gap-3 justify-between">
+                      <p className={"text-xs font-semibold"}>
+                        {paragraph.title}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </>
         )}
         {user && user.role === "profesor" && (
+          <>
             <h4 className={"text-xl font-semibold pb-3"}>Materias dictadas</h4>
-        )}
-        <div>
-          <div className={"w-full flex flex-col gap-4 h-[200px]"}>
-            {paragraphs.map((paragraph, i) => (
-              <div
-                key={i}
-                className="shadow-xl cursor-pointer hover:shadow-2xl relative z-10"
-              >
-                <div
-                  className="w-full h-1"
-                  style={{ backgroundColor: paragraph.color }}
-                ></div>
-                <div className="bg-white h-full p-3 flex flex-col sm:flex-row items-center gap-3 justify-between">
-                  <p className={"text-xs font-semibold"}>{paragraph.title}</p>
-                </div>
+            <div>
+              <div className={"w-full flex flex-col gap-4 h-[200px]"}>
+                {paragraphs.map((paragraph, i) => (
+                  <div
+                    key={i}
+                    className="shadow-xl cursor-pointer hover:shadow-2xl relative z-10"
+                  >
+                    <div
+                      className="w-full h-1"
+                      style={{ backgroundColor: paragraph.color }}
+                    ></div>
+                    <div className="bg-white h-full p-3 flex flex-col sm:flex-row items-center gap-3 justify-between">
+                      <p className={"text-xs font-semibold"}>
+                        {paragraph.title}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

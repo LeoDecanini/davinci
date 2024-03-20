@@ -49,8 +49,8 @@ export async function POST(request: Request) {
 
     if (hasIncompleteUser) {
       return NextResponse.json(
-          { message: "Al menos un usuario tiene campos faltantes" },
-          { status: 400 }
+        { message: "Al menos un usuario tiene campos faltantes" },
+        { status: 400 },
       );
     }
 
@@ -58,21 +58,22 @@ export async function POST(request: Request) {
 
     for (const userIndex in usersData) {
       const userData = usersData[userIndex];
-      const { name, lastname, email, role, dni } = userData;
+      const { name, lastname, email, role, dni, course, tel, direction } =
+        userData;
 
       const existingUserWithEmail = await User.findOne({ email });
       if (existingUserWithEmail) {
         return NextResponse.json(
-            { message: `El email ${email} ya está en uso` },
-            { status: 409 }
+          { message: `El email ${email} ya está en uso` },
+          { status: 409 },
         );
       }
 
       const existingUserWithDNI = await User.findOne({ dni });
       if (existingUserWithDNI) {
         return NextResponse.json(
-            { message: `El DNI ${dni} ya está en uso` },
-            { status: 409 }
+          { message: `El DNI ${dni} ya está en uso` },
+          { status: 409 },
         );
       }
 
@@ -85,13 +86,15 @@ export async function POST(request: Request) {
         password,
         role,
         dni,
+        course,
+        tel,
+        direction,
       });
 
       const savedUser = await newUser.save();
       savedUsers.push(savedUser);
+      console.log(`userIndex`, savedUsers);
     }
-
-    console.log("Usuarios guardados:", savedUsers);
 
     return NextResponse.json(savedUsers);
   } catch (error) {

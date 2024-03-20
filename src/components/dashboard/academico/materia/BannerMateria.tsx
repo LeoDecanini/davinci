@@ -33,7 +33,7 @@ const BannerMateria = ({ tablon, trabajo, material }: any) => {
         </p>
       </div>
       <div className={"absolute top-5 right-5"}>
-        {user && user.role === "profesor" && (
+        {user && user.role !== "alumno" && (
           <>
             {tablon && (
               <Dialog>
@@ -62,55 +62,70 @@ const BannerMateria = ({ tablon, trabajo, material }: any) => {
                         placeholder="Descripcion del anuncio."
                       />
                     </div>
+                    <div className={"col-span-2"}>
+                      <Button className={"w-full"} variant={"secondary"}>
+                        Enviar
+                      </Button>
+                    </div>
                   </div>
                 </DialogContent>
               </Dialog>
             )}
             {trabajo && (
-                <Dialog>
-                  <DialogTrigger
-                      className={`${buttonVariants({ variant: "outline" })} flex gap-2 items-center`}
-                  >
-                    <FaPlus className={"text-xs"} /> Agregar seccion
-                  </DialogTrigger>
-                  <DialogContent className={"w-full max-w-2xl"}>
-                    <h2 className={"text-xl font-semibold"}>Agregar seccion</h2>
-                    <div className={"grid grid-cols-2 gap-3"}>
-                      <div className={"col-span-2"}>
-                        <Label htmlFor="title">Titulo</Label>
-                        <Input
-                            type={"text"}
-                            placeholder={"Título"}
-                            id={"title"}
-                            name={"title"}
-                        />
-                      </div>
+              <Dialog>
+                <DialogTrigger
+                  className={`${buttonVariants({ variant: "outline" })} flex gap-2 items-center`}
+                >
+                  <FaPlus className={"text-xs"} /> Agregar seccion
+                </DialogTrigger>
+                <DialogContent className={"w-full max-w-2xl"}>
+                  <h2 className={"text-xl font-semibold"}>Agregar seccion</h2>
+                  <div className={"grid grid-cols-2 gap-3"}>
+                    <div className={"col-span-2"}>
+                      <Label htmlFor="title">Titulo</Label>
+                      <Input
+                        type={"text"}
+                        placeholder={"Título"}
+                        id={"title"}
+                        name={"title"}
+                      />
                     </div>
-                  </DialogContent>
-                </Dialog>
+                    <div className={"col-span-2"}>
+                      <Button className={"w-full"} variant={"secondary"}>
+                        Enviar
+                      </Button>
+                    </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
             )}
             {material && (
-                <Dialog>
-                  <DialogTrigger
-                      className={`${buttonVariants({ variant: "outline" })} flex gap-2 items-center`}
-                  >
-                    <FaPlus className={"text-xs"} /> Agregar material
-                  </DialogTrigger>
-                  <DialogContent className={"w-full max-w-2xl"}>
-                    <h2 className={"text-xl font-semibold"}>Agregar material</h2>
-                    <div className={"grid grid-cols-2 gap-3"}>
-                      <div className={"col-span-2"}>
-                        <Label htmlFor="title">Titulo</Label>
-                        <Input
-                            type={"text"}
-                            placeholder={"Título"}
-                            id={"title"}
-                            name={"title"}
-                        />
-                      </div>
+              <Dialog>
+                <DialogTrigger
+                  className={`${buttonVariants({ variant: "outline" })} flex gap-2 items-center`}
+                >
+                  <FaPlus className={"text-xs"} /> Agregar material
+                </DialogTrigger>
+                <DialogContent className={"w-full max-w-2xl"}>
+                  <h2 className={"text-xl font-semibold"}>Agregar material</h2>
+                  <div className={"grid grid-cols-2 gap-3"}>
+                    <div className={"col-span-2"}>
+                      <Label htmlFor="title">Titulo</Label>
+                      <Input
+                        type={"text"}
+                        placeholder={"Título"}
+                        id={"title"}
+                        name={"title"}
+                      />
                     </div>
-                  </DialogContent>
-                </Dialog>
+                    <div className={"col-span-2"}>
+                      <Button className={"w-full"} variant={"secondary"}>
+                        Enviar
+                      </Button>
+                    </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
             )}
           </>
         )}

@@ -106,8 +106,7 @@ const Notifications = () => {
     <div className={"col-span-3"}>
       <div className="flex justify-between items-center px-4">
         <h3 className="font-bold sm:text-xl md:text-2xl">Notificaciones</h3>
-        {(user && user.role === "secretario") ||
-          (user && user.role === "administrador" && (
+        {user && user.role === "secretario" && (
             <Dialog>
               <DialogTrigger
                 className={`${buttonVariants({ variant: "outline" })}`}
@@ -141,7 +140,7 @@ const Notifications = () => {
                 </div>
               </DialogContent>
             </Dialog>
-          ))}
+          )}
       </div>
       <div className={"w-full pt-5 px-10"}>
         {currentNotifications.map((notification) => (
@@ -166,7 +165,6 @@ const Notifications = () => {
             {currentPage > 1 && (
               <PaginationItem>
                 <PaginationPrevious
-                  href="#"
                   onClick={() => handlePageChange(currentPage - 1)}
                 />
               </PaginationItem>
@@ -184,7 +182,6 @@ const Notifications = () => {
             {currentPage < totalPages && (
               <PaginationItem>
                 <PaginationNext
-                  href="#"
                   onClick={() => handlePageChange(currentPage + 1)}
                 />
               </PaginationItem>

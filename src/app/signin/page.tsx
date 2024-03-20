@@ -1,13 +1,21 @@
-import React from "react";
-import { Button } from "@/components/ui/button";
-import { FcGoogle } from "react-icons/fc";
-import { FaFacebookF } from "react-icons/fa6";
-import Link from "next/link";
+"use client";
+import React, { useEffect } from "react";
+import { useUser } from "@/context/UserContext";
+import { useRouter } from "next/navigation";
 import FormSignIp from "@/components/FormSignIp";
 
 const IniciarSesion = () => {
+  const { user } = useUser();
+  const route = useRouter();
+
+  useEffect(() => {
+    if (user) {
+      route.push("/protected");
+    }
+  }, [user, route]);
+
   return (
-      <section className="flex justify-center items-center h-[calc(100svh-94px)] mt-[94px]">
+      <section className="flex justify-center items-center h-[calc(100vh-94px)] mt-[94px]">
         <div className="w-full max-w-screen-xl flex flex-col lg:flex-row gap-10">
           <div className="flex flex-col justify-center">
             <h1 className="text-4xl pb-8 sm:pb-0 sm:text-6xl text-gray-800 font-bold">

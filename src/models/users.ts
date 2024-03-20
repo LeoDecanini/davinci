@@ -38,6 +38,18 @@ const userSchema = new Schema({
     type: String,
     minlength: [8, "El DNI debe tener al menos 11 caracteres"],
   },
+  course: {
+    type: String,
+    minlength: [2, "El curso debe tener como mínimo 2 letras"],
+  },
+  tel: {
+    type: String,
+    minlength: [10, "El telefono debe tener minimo 10 nueros"],
+  },
+  direction: {
+    type: String,
+    minlength: [2, "El curso debe tener como mínimo 2 letras"],
+  },
 });
 
 const User = models.User || model("User", userSchema);

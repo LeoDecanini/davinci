@@ -1,6 +1,7 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Select,
   SelectContent,
@@ -17,49 +18,51 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import { Input } from "@/components/ui/input";
+import { useUser } from "@/context/UserContext";
 
 const GrillaEvaluatoria = () => {
-  const tablaData = [
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
-    { nombre: "Juan", tp1: 8, tp2: 7, tp3: 9, final: "Aprobado" },
+  const { user } = useUser();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(20);
+  const [tablaData, setTablaData] = useState([
+    { nombre: "Juan", tp1: "", tp2: "", tp3: "", final: "" },
+  ]);
 
-  ];
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = tablaData.slice(indexOfFirstItem, indexOfLastItem);
+
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+
+  const [value, setValue] = useState({
+    tp1: "",
+    tp2: "",
+    tp3: "",
+    final: "",
+  });
+
+  const checkValue = (e: any, ubication: any) => {
+    if (e <= 10 && e >= 1) {
+      setValue((prev) => ({
+        ...prev,
+        [ubication]: e,
+      }));
+    } else {
+      if (e > 10) {
+        setValue((prev) => ({
+          ...prev,
+          [ubication]: 10,
+        }));
+      } else {
+        setValue((prev) => ({
+          ...prev,
+          [ubication]: "",
+        }));
+      }
+    }
+  };
+
   return (
     <Dialog>
       <DialogTrigger className={`${buttonVariants({ variant: "secondary" })}`}>
@@ -124,54 +127,133 @@ const GrillaEvaluatoria = () => {
                 </Select>
               </div>
             </div>
-            <div
-              className={
-                "w-full flex flex-col justify-between"
-              }
-            >
+            <div className={"w-full flex flex-col justify-between"}>
               <div className="w-full">
                 <div className={"w-full h-full"}>
                   <div className={"w-full bg-gray-50 p-2 pr-[23px]"}>
                     <div className={"w-full flex gap-3 justify-between px-2"}>
-                      <span className="text-left w-full border-r">Nombre</span>
-                      <span className="text-left w-full border-r">
+                      <span className="text-left w-full">Nombre</span>
+                      <span className="text-left w-full">
                         Trabajo Práctico 1
                       </span>
-                      <span className="text-left w-full border-r">
+                      <span className="text-left w-full">
                         Trabajo Práctico 2
                       </span>
-                      <span className="text-left w-full border-r">
+                      <span className="text-left w-full">
                         Trabajo Práctico 3
                       </span>
-                      <span className="text-left w-full border-r">Final</span>
-                      <span className="text-left w-full">
-                        Acciones
-                      </span>
+                      <span className="text-left w-full">Final</span>
+                      <span className="text-left w-full">Acciones</span>
                     </div>
                   </div>
-                  <div className={"overflow-y-scroll h-[calc(100svh-260px)] p-0"}>
-                    {tablaData.map((item, index) => (
+                  <div
+                    className={"overflow-y-scroll h-[calc(100svh-260px)] p-0"}
+                  >
+                    {currentItems.map((item, index) => (
                       <div
                         key={index}
                         className="w-full flex gap-3 justify-between px-4 border-b border-t"
                       >
-                        <span className="text-left w-full py-4 border-r">
+                        <span className="text-left flex items-center w-full border-r pr-3 py-3">
                           {item.nombre}
                         </span>
-                        <span className="text-left w-full py-4 border-r">
-                          {item.tp1}
+                        <span className="text-left flex items-center w-full border-r pr-3 py-3">
+                          {item.tp1 !== "" ? (
+                            item.tp1
+                          ) : (
+                            <Input
+                              type="number"
+                              value={value.tp1}
+                              placeholder={"Agregar la nota"}
+                              onChange={(e) => {
+                                checkValue(e.target.value, "tp1");
+                              }}
+                            />
+                          )}
                         </span>
-                        <span className="text-left w-full py-4 border-r">
-                          {item.tp2}
+                        <span className="text-left flex items-center w-full border-r pr-3 py-3">
+                          {item.tp2 !== "" ? (
+                            item.tp2
+                          ) : (
+                            <Input
+                              type="number"
+                              value={value.tp2}
+                              placeholder={"Agregar la nota"}
+                              onChange={(e) => {
+                                checkValue(e.target.value, "tp2");
+                              }}
+                            />
+                          )}
                         </span>
-                        <span className="text-left w-full py-4 border-r">
-                          {item.tp3}
+                        <span className="text-left flex items-center w-full border-r pr-3 py-3">
+                          {item.tp3 !== "" ? (
+                            item.tp3
+                          ) : (
+                            <Input
+                              type="number"
+                              value={value.tp3}
+                              placeholder={"Agregar la nota"}
+                              onChange={(e) => {
+                                checkValue(e.target.value, "tp3");
+                              }}
+                            />
+                          )}
                         </span>
-                        <span className="text-left w-full py-4 border-r">
-                          {item.final}
+                        <span className="text-left flex items-center w-full border-r pr-3 py-3">
+                          {item.final !== "" ? (
+                            item.final
+                          ) : (
+                            <Input
+                              type="number"
+                              value={value.final}
+                              placeholder={"Agregar la nota"}
+                              onChange={(e) => {
+                                checkValue(e.target.value, "final");
+                              }}
+                            />
+                          )}
                         </span>
-                        <span className="text-left w-full py-4">
-                          Editar / Borrar
+                        <span className="text-left flex justify-between gap-3 items-center w-full">
+                          {user && user.role === "profesor" ? (
+                            <Dialog>
+                              <DialogTrigger
+                                className={`${buttonVariants({ variant: "default" })} !bg-blue-700 w-full hover:!bg-blue-800`}
+                              >
+                                Editar
+                              </DialogTrigger>
+                              <DialogContent
+                                className={"w-full max-w-2xl min-h-20"}
+                              >
+                                <h2 className={"text-xl font-bold"}>
+                                  Aviso importante
+                                </h2>
+                                <p>
+                                  Para poder editar una nota tendrás que hablar
+                                  con un directivo y que te otorgue el permiso,
+                                  de otra forma no podrás editar esta nota.
+                                </p>
+                              </DialogContent>
+                            </Dialog>
+                          ) : (
+                            user &&
+                            (user.role === "secretario" ||
+                              user.role === "administrador") && (
+                              <Button
+                                className={
+                                  "bg-blue-700 w-full hover:bg-blue-800"
+                                }
+                                variant={"secondary"}
+                              >
+                                Editar
+                              </Button>
+                            )
+                          )}
+                          <Button
+                            className={"bg-green-700 w-full hover:bg-green-800"}
+                            variant={"secondary"}
+                          >
+                            Guardar
+                          </Button>
                         </span>
                       </div>
                     ))}
@@ -184,26 +266,33 @@ const GrillaEvaluatoria = () => {
                 }
               >
                 <p>
-                  pagina <span className={"font-semibold"}>1</span> de
-                  <span className={"font-semibold pl-1"}>100</span>
+                  página <span className={"font-semibold"}>{currentPage}</span>{" "}
+                  de
+                  <span className={"font-semibold pl-1"}>
+                    {Math.ceil(tablaData.length / itemsPerPage)}
+                  </span>
                 </p>
                 <div>
                   <Pagination>
                     <PaginationContent>
                       <PaginationItem>
-                        <PaginationPrevious href="#" />
+                        <PaginationPrevious
+                          onClick={() => paginate(currentPage - 1)}
+                        />
                       </PaginationItem>
+                      {Array.from({
+                        length: Math.ceil(tablaData.length / itemsPerPage),
+                      }).map((_, index) => (
+                        <PaginationItem key={index}>
+                          <PaginationLink onClick={() => paginate(index + 1)}>
+                            {index + 1}
+                          </PaginationLink>
+                        </PaginationItem>
+                      ))}
                       <PaginationItem>
-                        <PaginationLink href="#">1</PaginationLink>
-                      </PaginationItem>
-                      <PaginationItem>
-                        <PaginationLink href="#">2</PaginationLink>
-                      </PaginationItem>
-                      <PaginationItem>
-                        <PaginationLink href="#">3</PaginationLink>
-                      </PaginationItem>
-                      <PaginationItem>
-                        <PaginationNext href="#" />
+                        <PaginationNext
+                          onClick={() => paginate(currentPage + 1)}
+                        />
                       </PaginationItem>
                     </PaginationContent>
                   </Pagination>

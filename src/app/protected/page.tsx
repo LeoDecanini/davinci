@@ -22,6 +22,7 @@ const Page = () => {
           <Notifications />
           {user && user.role === "alumno" && <InfoDashboard />}
           {user && user.role === "profesor" && <InfoDashboard />}
+          {user && user.role === "secretario" && <InfoDashboard />}
         </div>
       </div>
     </section>

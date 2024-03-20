@@ -1,16 +1,12 @@
 "use client";
 import React, { useState } from "react";
-
 import axios, { AxiosError } from "axios";
-import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
-
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm,} from "react-hook-form";
 import * as z from "zod";
 import {
   Form,
@@ -54,6 +50,15 @@ const formSchema = z.object({
   dni: z.string().min(8, {
     message: "El dni debe tener como mínimo 8 números",
   }),
+  course: z.string().min(2, {
+    message: "El curso debe tener como mínimo 2 letras",
+  }),
+  tel: z.string().min(10, {
+    message: "El telefono debe tener minimo 10 nueros",
+  }),
+  direction: z.string().min(2, {
+    message: "El curso debe tener como mínimo 2 letras",
+  }),
 });
 
 type Role = "alumno" | "profesor" | "secretario" | "administrador";
@@ -64,6 +69,9 @@ type InputFieldType = {
   email: string;
   role: Role;
   dni: number;
+  course: string;
+  tel: string;
+  direction: string;
 };
 
 const FormSignUp = ({ numeroAlumnos }: any) => {
@@ -75,6 +83,9 @@ const FormSignUp = ({ numeroAlumnos }: any) => {
       email: "",
       role: "alumno",
       dni: "",
+      course: "",
+      tel: "",
+      direction: "",
     },
   });
 
@@ -86,7 +97,6 @@ const FormSignUp = ({ numeroAlumnos }: any) => {
       console.log(values);
 
       const signupResponse = await axios.post("/api/auth/signup", values);
-
       console.log(signupResponse);
       toast.success("Usuario/s creado/s correctamente");
     } catch (error) {
@@ -135,6 +145,27 @@ const FormSignUp = ({ numeroAlumnos }: any) => {
         colSpan: "col-span-1",
         type: "number",
       },
+      {
+        name: "course",
+        placeholder: "course 1",
+        label: "Curso",
+        colSpan: "col-span-1",
+        type: "text",
+      },
+      {
+        name: "tel",
+        placeholder: "+5491139549810",
+        label: "Telefono",
+        colSpan: "col-span-1",
+        type: "number",
+      },
+      {
+        name: "direction",
+        placeholder: "Direccion 1",
+        label: "Direccion",
+        colSpan: "col-span-1",
+        type: "text",
+      },
     ],
   ];
 
@@ -176,6 +207,27 @@ const FormSignUp = ({ numeroAlumnos }: any) => {
         colSpan: "col-span-1",
         type: "number",
       },
+      {
+        name: `course${i}`,
+        placeholder: `course ${i}`,
+        label: "Curso",
+        colSpan: "col-span-1",
+        type: "text",
+      },
+      {
+        name: `tel${i}`,
+        placeholder: `+5491139549810`,
+        label: "Telefono",
+        colSpan: "col-span-1",
+        type: "number",
+      },
+      {
+        name: `direction${i}`,
+        placeholder: `Direccion ${i}`,
+        label: "Direccion",
+        colSpan: "col-span-1",
+        type: "text",
+      },
     ]);
   }
 
@@ -188,7 +240,7 @@ const FormSignUp = ({ numeroAlumnos }: any) => {
           {fields.map((row, rowIndex) => (
             <div
               key={rowIndex}
-              className={`grid gap-y-3 gap-x-2 grid-cols-5 w-full ${
+              className={`grid gap-y-3 gap-x-2 grid-cols-8 w-full ${
                 rowIndex > 0 ? "pt-5" : ""
               }`}
             >
@@ -200,7 +252,7 @@ const FormSignUp = ({ numeroAlumnos }: any) => {
                       name={fieldInfo.name as any}
                       render={({ field }) => (
                         <FormItem>
-                          {colIndex < 5 && (
+                          {colIndex < 8 && (
                             <div className="bg-secondary py-2 px-3">
                               <FormLabel
                                 className="text-lg font-bold text-white"
