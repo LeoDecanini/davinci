@@ -76,7 +76,7 @@ const Nav = () => {
                       </Link>
                       <Link href="/protected/signup">
                         <li className="w-full p-1 hover:bg-primary hover:text-black font-bold flex items-center gap-2">
-                          <RiContactsBook2Fill /> Agregar alumnos
+                          <RiContactsBook2Fill /> Agregar usuarios
                         </li>
                       </Link>
                     </>

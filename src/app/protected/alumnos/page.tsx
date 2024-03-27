@@ -25,8 +25,10 @@ import { MdDelete } from "react-icons/md";
 import { FaSave } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {toast} from "sonner";
+import { toast } from "sonner";
 import axios from "axios";
+
+type RoleOrder = "alumno" | "secretario" | "profesor" | "administrador";
 
 const Page = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -36,12 +38,37 @@ const Page = () => {
   const [editedItem, setEditedItem] = useState<any>(null);
   const [role, setRole] = useState<any>("");
   const [searchTerm, setSearchTerm] = useState("");
+  const [orderBy, setOrderBy] = useState<RoleOrder>("alumno");
 
-  const filteredUsers = usersTable.filter((user: any) => {
-    return Object.values(user).some((value) =>
-        typeof value === "string" && value.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  });
+  const handleOrderByChange = (value: RoleOrder) => {
+    setOrderBy(value);
+  };
+
+  const filteredUsers = usersTable
+    .filter((user: any) => {
+      return Object.values(user).some(
+        (value) =>
+          typeof value === "string" &&
+          value.toLowerCase().includes(searchTerm.toLowerCase()),
+      );
+    })
+    .sort((a: any, b: any) => {
+      if (orderBy as string === "alphabetical") {
+        return a.name.localeCompare(b.name);
+      } else if (orderBy as string === "role") {
+        const rolesOrder: Record<RoleOrder, number> = {
+          alumno: 0,
+          secretario: 1,
+          profesor: 2,
+          administrador: 3,
+        };
+        return (
+          rolesOrder[a.role as RoleOrder] - rolesOrder[b.role as RoleOrder]
+        );
+      } else {
+        return 0;
+      }
+    });
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -67,11 +94,15 @@ const Page = () => {
       setEdit(false);
       try {
         const updatedItem = { ...editedItem, role };
-        const response = await axios.put(`/api/users/${item._id}`, updatedItem, {
-          headers: {
-            "Content-Type": "application/json",
+        const response = await axios.put(
+          `/api/users/${item._id}`,
+          updatedItem,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
           },
-        });
+        );
         if (response.status !== 200) {
           throw new Error("Error al enviar cambios al servidor");
         }
@@ -149,17 +180,20 @@ const Page = () => {
                   </div>
                 </div>
               </div>
-              <div className={"flex items-center gap-3"}>
-                <Select>
-                  <SelectTrigger className="w-[180px]">
-                    <SelectValue placeholder="Orden" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="light">Orden alfabetico</SelectItem>
-                    <SelectItem value="dark">rol</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
+              <Select
+                onValueChange={(e: any) => {
+                  handleOrderByChange(e);
+                }}
+              >
+                <SelectTrigger className="w-[180px]">
+                  <SelectValue placeholder="Orden" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="default">Sin orden</SelectItem>
+                  <SelectItem value="alphabetical">Orden alfabético</SelectItem>
+                  <SelectItem value="role">Orden por rol</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
             <div className={"w-full flex flex-col justify-between"}>
               <div className="w-full">
