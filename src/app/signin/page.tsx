@@ -15,8 +15,8 @@ const IniciarSesion = () => {
   }, [user, route]);
 
   return (
-      <section className="flex justify-center items-center h-[calc(100vh-94px)] mt-[94px]">
-        <div className="w-full max-w-screen-xl flex flex-col lg:flex-row gap-10">
+      <section className="flex justify-center items-center min-h-[calc(100vh-94px)] mt-[94px]">
+        <div className="w-full max-w-screen-xl flex flex-col lg:flex-row gap-10 px-5 py-10">
           <div className="flex flex-col justify-center">
             <h1 className="text-4xl pb-8 sm:pb-0 sm:text-6xl text-gray-800 font-bold">
               Iniciar Sesión
@@ -25,10 +25,7 @@ const IniciarSesion = () => {
               Bienvenidos alumnos, inicien sesión para poder empezar a estudiar.
             </p>
             <div className="flex pt-8 items-center gap-5">
-              <h2 className="text-secondary font-bold text-2xl">
-                Iniciar Sesión con
-              </h2>
-              <div className="border border-secondary w-20"></div>
+              <div className="border border-secondary w-full"></div>
             </div>
 
             <FormSignIp />

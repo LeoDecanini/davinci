@@ -81,7 +81,7 @@ const Academico: React.FC = () => {
         "w-full h-full min-h-[calc(100svh-60px)] mt-[60px] flex justify-center"
       }
     >
-      <div className="max-w-7xl w-full flex items-center flex-col">
+      <div className="max-w-7xl w-full flex items-center flex-col px-5">
         <div className={"py-10 text-center"}>
           <h3 className="font-bold text-xl sm:text-3xl md:text-4xl underline decoration-secondary underline-offset-8">
             Panel Acedemico

@@ -11,7 +11,7 @@ const Teams = ({ teams }: any) => {
             <div className={`h-1 max-w-40 md:max-w-60 bg-primary`}></div>
           </div>
         </div>
-        <div className={"grid grid-cols-2 gap-10 pt-10"}>
+        <div className={"grid md:grid-cols-2 gap-10 pt-10"}>
           {teams.members.map((member: any, index: any) => (
             <div
               key={index}

@@ -39,7 +39,7 @@ const Materias: React.FC<{ paragraphs: Paragraph[] }>  = ({paragraphs}) => {
     const currentItems: Paragraph[] = paragraphs.slice(startIndex, endIndex);
 
     return (
-        <div className={"pt-10 gap-5 grid grid-cols-3 w-full"}>
+        <div className={"pt-10 gap-5 grid sm:grid-cols-2 md:grid-cols-3 sm:w-full"}>
             {currentItems.map((paragraph, i) => (
                 <Link
                     href={paragraph.link}
@@ -52,13 +52,13 @@ const Materias: React.FC<{ paragraphs: Paragraph[] }>  = ({paragraphs}) => {
                         <div className={"rounded-t-md"}>
                             <div
                                 className={
-                                    "w-full min-h-20 opacity-85 rounded-t-md flex flex-col p-1"
+                                    "w-full sm:min-h-20 opacity-85 rounded-t-md flex flex-col p-1"
                                 }
                                 style={{background: paragraph.color}}
                             >
                                 <h3
                                     className={
-                                        "text-white text-xl px-2 pt-2 truncate flex items-center gap-2 w-auto"
+                                        "text-white text-xl px-2 pt-2 truncate flex flex-col sm:flex-row sm:items-center gap-2 w-auto "
                                     }
                                 >
                                     <Badge
@@ -68,7 +68,7 @@ const Materias: React.FC<{ paragraphs: Paragraph[] }>  = ({paragraphs}) => {
                                     >
                                         {paragraph.commission}
                                     </Badge>{" "}
-                                    <span className={"truncate"}>{paragraph.title}</span>
+                                    <span className={"truncate sm:w-full max-w-[280px]"}>{paragraph.title}</span>
                                 </h3>
                                 <span
                                     className={
@@ -97,7 +97,7 @@ const Materias: React.FC<{ paragraphs: Paragraph[] }>  = ({paragraphs}) => {
                     </div>
                 </Link>
             ))}
-            <div className={"col-span-3 pt-10"}>
+            <div className={" sm:col-span-2 md:col-span-3 pt-10"}>
                 <Pagination>
                     <PaginationContent>
                         {currentPage > 1 && (

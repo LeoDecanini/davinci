@@ -18,11 +18,17 @@ const Page = () => {
             Bienvenidos al DV Carreras
           </h3>
         </div>
-        <div className={"h-full w-full grid grid-cols-4 p-5"}>
-          <Notifications />
-          {user && user.role === "alumno" && <InfoDashboard />}
-          {user && user.role === "profesor" && <InfoDashboard />}
-          {user && user.role === "secretario" && <InfoDashboard />}
+        <div className={"h-full w-full hidden lg:grid grid-cols-4 p-5"}>
+          <Notifications/>
+          {user && user.role === "alumno" && <InfoDashboard/>}
+          {user && user.role === "profesor" && <InfoDashboard/>}
+          {user && user.role === "secretario" && <InfoDashboard/>}
+        </div>
+        <div className={"h-full  lg:hidden w-full p-5"}>
+          {user && user.role === "alumno" && <InfoDashboard/>}
+          {user && user.role === "profesor" && <InfoDashboard/>}
+          {user && user.role === "secretario" && <InfoDashboard/>}
+          <Notifications/>
         </div>
       </div>
     </section>

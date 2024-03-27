@@ -104,9 +104,9 @@ const Notifications = () => {
   };
   return (
     <div className={"col-span-3"}>
-      <div className="flex justify-between items-center px-4">
-        <h3 className="font-bold sm:text-xl md:text-2xl">Notificaciones</h3>
-        {user && user.role === "secretario" && (
+      <div className="flex flex-col sm:flex-row gap-3 justify-between items-center px-4">
+        <h3 className="font-bold text-2xl sm:3text-xl md:text-2xl">Notificaciones</h3>
+        {user && (user.role === "secretario" || user.role === "administrador") && (
             <Dialog>
               <DialogTrigger
                 className={`${buttonVariants({ variant: "outline" })}`}
@@ -142,7 +142,7 @@ const Notifications = () => {
             </Dialog>
           )}
       </div>
-      <div className={"w-full pt-5 px-10"}>
+      <div className={"w-full pt-5 md:px-10"}>
         {currentNotifications.map((notification) => (
           <div key={notification.id} className={"p-5 shadow rounded-md mb-10"}>
             <div className={"w-full"}>
