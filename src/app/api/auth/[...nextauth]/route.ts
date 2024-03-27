@@ -4,7 +4,7 @@ import { connectDB } from "@/lib/mongoose";
 import User from "@/models/users";
 import bcrypt from "bcryptjs";
 
-export const handler = NextAuth({
+const handler = NextAuth({
   providers: [
     CredentialsProvider({
       name: "Credentials",
@@ -54,3 +54,5 @@ export const handler = NextAuth({
     signIn: "/signin",
   },
 });
+
+export { handler as GET, handler as POST };
