@@ -39,7 +39,7 @@ const Materias: React.FC<{ paragraphs: Paragraph[] }>  = ({paragraphs}) => {
     const currentItems: Paragraph[] = paragraphs.slice(startIndex, endIndex);
 
     return (
-        <div className={"pt-10 gap-5 grid sm:grid-cols-2 md:grid-cols-3 sm:w-full"}>
+        <div className={"pt-10 gap-5 grid sm:grid-cols-2 md:grid-cols-3 w-full"}>
             {currentItems.map((paragraph, i) => (
                 <Link
                     href={paragraph.link}
@@ -68,7 +68,7 @@ const Materias: React.FC<{ paragraphs: Paragraph[] }>  = ({paragraphs}) => {
                                     >
                                         {paragraph.commission}
                                     </Badge>{" "}
-                                    <span className={"truncate sm:w-full max-w-[280px]"}>{paragraph.title}</span>
+                                    <span className={"truncate sm:w-full max-w-[240px]"}>{paragraph.title}</span>
                                 </h3>
                                 <span
                                     className={

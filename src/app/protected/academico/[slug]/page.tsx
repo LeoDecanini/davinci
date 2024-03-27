@@ -154,15 +154,15 @@ const Page = ({ params }: any) => {
         "w-full h-full min-h-[calc(100svh-60px)] mt-[85px] flex justify-center"
       }
     >
-      <div className="max-w-7xl w-full flex items-center flex-col">
+      <div className="max-w-7xl w-full flex items-center flex-col px-2 sm:px-5">
         <div className={"py-8 w-full"}>
           <Tabs defaultValue="tablon">
-            <div className={"w-full flex items-center justify-between"}>
-              <TabsList>
-                <TabsTrigger value="tablon">Tablon</TabsTrigger>
-                <TabsTrigger value="trabajos">Trabajos</TabsTrigger>
-                <TabsTrigger value="material">Material de clase</TabsTrigger>
-                <TabsTrigger value="personas">Personas</TabsTrigger>
+            <div className={"w-full flex flex-col sm:flex-row gap-3 sm:items-center justify-between"}>
+              <TabsList className={"grid grid-cols-2 sm:grid-cols-4 h-full !text-left !items-start"}>
+                <TabsTrigger className={"w-full"} value="tablon">Tablon</TabsTrigger>
+                <TabsTrigger className={"w-full"} value="trabajos">Trabajos</TabsTrigger>
+                <TabsTrigger className={"w-full"} value="material">Material de clase</TabsTrigger>
+                <TabsTrigger className={"w-full"} value="personas">Personas</TabsTrigger>
               </TabsList>
               {user && user.role !== "alumno" && <GrillaEvaluatoria />}
             </div>

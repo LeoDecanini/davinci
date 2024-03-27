@@ -16,7 +16,7 @@ const IniciarSesion = () => {
 
   return (
       <section className="flex justify-center items-center min-h-[calc(100vh-94px)] mt-[94px]">
-        <div className="w-full max-w-screen-xl flex flex-col lg:flex-row gap-10 px-5 py-10">
+        <div className="w-full max-w-screen-xl flex flex-col lg:flex-row gap-10 px-2 sm:px-5 py-10">
           <div className="flex flex-col justify-center">
             <h1 className="text-4xl pb-8 sm:pb-0 sm:text-6xl text-gray-800 font-bold">
               Iniciar Sesión

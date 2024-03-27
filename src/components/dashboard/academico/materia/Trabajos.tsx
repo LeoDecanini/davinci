@@ -14,9 +14,9 @@ const Trabajos = ({ paragraphs, trabajos, pending }: any) => {
         <BannerMateria tablon={false} trabajo={true} material={false} />
       </div>
       <div
-        className={`pt-10 ${pending ? "grid grid-cols-4" : " max-w-5xl mx-auto"}`}
+        className={`pt-10 ${pending ? "grid lg:grid-cols-4" : " max-w-5xl mx-auto"}`}
       >
-        <div className={`${pending ? "col-span-3 px-5" : "w-full"}`}>
+        <div className={`${pending ? "col-span-3 px-2 sm:px-5" : "w-full"}`}>
           {trabajos.map((grupoTrabajos: any, index: any) => (
             <div key={index} className={` ${index > 0 ? "py-5" : "pb-5"}`}>
               <div className={"flex items-center gap-5"}>
@@ -40,11 +40,11 @@ const Trabajos = ({ paragraphs, trabajos, pending }: any) => {
                         className={"text-2xl bg-[#FF5733] text-white"}
                       />
                     </div>
-                    <div className={"flex gap-4 item center w-full"}>
+                    <div className={"flex flex-col sm:flex-row gap-4 item center w-full"}>
                       <h3 className={"text-xl font-semibold w-full"}>
                         {trabajo.title}
                       </h3>
-                      <p className={"w-full text-xl text-end"}>
+                      <p className={"w-full text-xl sm:text-end"}>
                         {trabajo.infodate} {trabajo.date}
                       </p>
                     </div>
@@ -55,7 +55,7 @@ const Trabajos = ({ paragraphs, trabajos, pending }: any) => {
           ))}
         </div>
         {pending && (
-          <div className={"col-span-1"}>
+          <div className={"hidden lg:block col-span-1"}>
             <h4 className={"text-xl font-semibold pb-3"}>Próximas entregas</h4>
             <div>
               <div className={"w-full flex flex-col gap-4 h-[200px]"}>

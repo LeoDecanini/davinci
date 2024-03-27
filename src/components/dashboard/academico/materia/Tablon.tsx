@@ -37,7 +37,7 @@ const Tablon = () => {
   console.log(currentTime);
 
   return (
-    <div className={"grid grid-cols-4 gap-5"}>
+    <div className={"grid lg:grid-cols-4 gap-5"}>
       <div className={"pt-7 col-span-3"}>
         <BannerMateria tablon={true} trabajo={false} material={false} />
         <div className={"pt-5 pb-4"}>
@@ -45,7 +45,7 @@ const Tablon = () => {
         </div>
         <Notificaciones />
       </div>
-      <div className={"col-span-1"}>
+      <div className={"hidden lg:block col-span-1"}>
         <div className={"pb-5"}>
           <Calendar />
         </div>

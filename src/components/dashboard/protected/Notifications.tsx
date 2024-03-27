@@ -104,7 +104,7 @@ const Notifications = () => {
   };
   return (
     <div className={"col-span-3"}>
-      <div className="flex flex-col sm:flex-row gap-3 justify-between items-center px-4">
+      <div className="flex flex-col sm:flex-row gap-3 justify-between items-center px-2 sm:px-5">
         <h3 className="font-bold text-2xl sm:3text-xl md:text-2xl">Notificaciones</h3>
         {user && (user.role === "secretario" || user.role === "administrador") && (
             <Dialog>
@@ -144,7 +144,7 @@ const Notifications = () => {
       </div>
       <div className={"w-full pt-5 md:px-10"}>
         {currentNotifications.map((notification) => (
-          <div key={notification.id} className={"p-5 shadow rounded-md mb-10"}>
+          <div key={notification.id} className={"p-2 sm:p-5 shadow rounded-md mb-10"}>
             <div className={"w-full"}>
               <img
                 className={"max-h-32 w-full object-cover rounded-md object-top"}

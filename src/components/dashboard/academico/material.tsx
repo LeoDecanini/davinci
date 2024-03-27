@@ -39,11 +39,11 @@ const Material = ({ trabajos }: any) => {
                         className={"text-2xl bg-[#FF5733] text-white"}
                       />
                     </div>
-                    <div className={"flex gap-4 item center w-full"}>
+                    <div className={"flex flex-col sm:flex-row gap-4 item-center w-full"}>
                       <h3 className={"text-xl font-semibold w-full"}>
                         {trabajo.title}
                       </h3>
-                      <p className={"w-full text-xl text-end"}>
+                      <p className={"w-full text-xl sm:text-end"}>
                         {trabajo.infodate} {trabajo.date}
                       </p>
                     </div>

@@ -109,7 +109,7 @@ const Notificaciones = () => {
           <div className={"w-full p-4 border-t"}>
             <div className={"w-full rounded-md flex items-center gap-2 p-2"}>
               <div>
-                <Avatar className={"w-12 h-12"}>
+                <Avatar className={"sm:block hidden w-12 h-12"}>
                   <AvatarImage />
                   <AvatarFallback
                     className={"text-white font-bold text-xl bg-fuchsia-600"}
