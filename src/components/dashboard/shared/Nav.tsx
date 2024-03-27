@@ -71,7 +71,7 @@ const Nav = () => {
                     <>
                       <Link href="/protected/alumnos">
                         <li className="w-full p-1 hover:bg-primary hover:text-black font-bold flex items-center gap-2">
-                          <RiContactsBook2Fill /> Alumnos Regristrados
+                          <RiContactsBook2Fill /> Usuarios regristrados
                         </li>
                       </Link>
                       <Link href="/protected/signup">

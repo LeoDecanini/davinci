@@ -96,7 +96,7 @@ export async function POST(request: Request) {
       console.log(`userIndex`, savedUsers);
     }
 
-    return NextResponse.json(savedUsers);
+    return NextResponse.json({ message: "success" });
   } catch (error) {
     console.log("Error al procesar la solicitud:", error);
     if (error instanceof Error) {

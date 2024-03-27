@@ -25,6 +25,8 @@ import { MdDelete } from "react-icons/md";
 import { FaSave } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import {toast} from "sonner";
+import axios from "axios";
 
 const Page = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -32,10 +34,23 @@ const Page = () => {
   const [usersTable, setUsersTable] = useState<any>([]);
   const [edit, setEdit] = useState<boolean>(false);
   const [editedItem, setEditedItem] = useState<any>(null);
+  const [role, setRole] = useState<any>("");
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredUsers = usersTable.filter((user: any) => {
+    return Object.values(user).some((value) =>
+        typeof value === "string" && value.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  });
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = usersTable.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = filteredUsers.slice(indexOfFirstItem, indexOfLastItem);
+
+  const handleSearchChange = (e: any) => {
+    setSearchTerm(e.target.value);
+    console.log("Search term:", e.target.value);
+  };
 
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
@@ -51,17 +66,18 @@ const Page = () => {
     if (edit) {
       setEdit(false);
       try {
-        const response = await fetch(`/api/users/${item._id}`, {
-          method: "PUT",
+        const updatedItem = { ...editedItem, role };
+        const response = await axios.put(`/api/users/${item._id}`, updatedItem, {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(editedItem),
         });
-        if (!response.ok) {
+        if (response.status !== 200) {
           throw new Error("Error al enviar cambios al servidor");
         }
-        console.log("Cambios enviados exitosamente al servidor");
+        if (response.data.message === "success") {
+          window.location.reload();
+        }
       } catch (error) {
         console.error("Error al enviar cambios al servidor:", error);
       }
@@ -93,7 +109,7 @@ const Page = () => {
         "w-full h-full min-h-[calc(100svh-86px)] mt-[60px] flex justify-center"
       }
     >
-      <div className="max-w-7xl w-full flex items-center flex-col">
+      <div className="max-w-screen-2xl w-full flex items-center flex-col">
         <section className={"w-full h-full p-2"}>
           <div className={" border h-full rounded-md"}>
             <div
@@ -102,7 +118,7 @@ const Page = () => {
               }
             >
               <div className="w-full md:w-1/3">
-                <form className="flex items-center">
+                <div className="flex items-center">
                   <label htmlFor="simple-search" className="sr-only">
                     Search
                   </label>
@@ -127,9 +143,11 @@ const Page = () => {
                       id="simple-search"
                       className="border text-sm rounded-lg block w-full pl-10 p-2"
                       placeholder="Search"
+                      value={searchTerm}
+                      onChange={handleSearchChange}
                     />
                   </div>
-                </form>
+                </div>
               </div>
               <div className={"flex items-center gap-3"}>
                 <Select>
@@ -138,7 +156,7 @@ const Page = () => {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="light">Orden alfabetico</SelectItem>
-                    <SelectItem value="dark">Curso</SelectItem>
+                    <SelectItem value="dark">rol</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -154,6 +172,7 @@ const Page = () => {
                       <span className="text-left w-full">Email</span>
                       <span className="text-left w-full">Telefonos</span>
                       <span className="text-left w-full">Direccion</span>
+                      <span className="text-left w-full">Rol</span>
                       <span className="text-left w-full">Acciones</span>
                     </div>
                   </div>
@@ -253,6 +272,29 @@ const Page = () => {
                                 onChange={handleInputChange}
                                 name="direction"
                               />
+                            )}
+                          </ResizablePanel>
+                          <ResizablePanel className="text-left flex items-center w-full truncate border-l px-2 py-3">
+                            {!edit ? (
+                              `${item.role}`
+                            ) : (
+                              <Select onValueChange={(e) => setRole(e)}>
+                                <SelectTrigger className="w-full">
+                                  <SelectValue placeholder={item.role} />
+                                </SelectTrigger>
+                                <SelectContent>
+                                  <SelectItem value="alumno">alumno</SelectItem>
+                                  <SelectItem value="profesor">
+                                    profesor
+                                  </SelectItem>
+                                  <SelectItem value="secretario">
+                                    secretario
+                                  </SelectItem>
+                                  <SelectItem value="administrador">
+                                    administrador
+                                  </SelectItem>
+                                </SelectContent>
+                              </Select>
                             )}
                           </ResizablePanel>
                           <ResizableHandle />

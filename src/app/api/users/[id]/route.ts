@@ -80,7 +80,7 @@ export async function PUT(request: Request, { params }: any) {
     await userToUpdate.save();
 
     console.log("Usuario actualizado:", userToUpdate);
-    return NextResponse.json(userToUpdate);
+    return NextResponse.json({ message: "success" });
   } catch (error) {
     console.error("Error al actualizar usuario:", error);
     return NextResponse.json(

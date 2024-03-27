@@ -99,6 +99,13 @@ const FormSignUp = ({ numeroAlumnos }: any) => {
       const signupResponse = await axios.post("/api/auth/signup", values);
       console.log(signupResponse);
       toast.success("Usuario/s creado/s correctamente");
+
+
+      if (signupResponse.data.message === "success") {
+        toast.success("Usuario/s creado/s correctamente");
+        window.location.reload();
+      }
+
     } catch (error) {
       if (error instanceof AxiosError) {
         console.log(error);
